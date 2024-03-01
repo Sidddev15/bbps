@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+      --primary-font: "Roboto", sans-serif;
+      --common-gradient: linear-gradient(180deg, #FC8814 0%, #F86403 100%);
+}
+
+body {
+      background: #FAFAFA;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+      margin: 0;
+      padding: 0;
+}
+
+.d-flex-container {
+      display: flex;
+      column-gap: 5px;
+      align-items: center;
+}
+
+.topbar-info-container a {
+      text-decoration: none;
+}
+
+.form-check-input:checked {
+      background-image: url('../images/active-radio.png');
+      background-color: transparent;
+      border: none;
+}
+
+.form-check-input:focus {
+      box-shadow: none;
+}
+
+.error-message {
+      font-family: var(--primary-font);
+      color: red;
+      font-weight: 500;
+      position: absolute;
+      top: 204px;
+      font-size: 12px;
+      display: none;
+}
+
+.section-two .col-lg-12 {
+      padding: 0;
+}
+
+.back-btn p {
+      color: #24272C;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+}
+
+.inner-section-three .col-lg-4 {
+      max-width: 469px;
+}
+
+/* * Modal */
+/* * modal */
+.popup-container .d-flex-modal {
+      flex-direction: row-reverse;
+      justify-content: start;
+      display: flex;
+      column-gap: 29px;
+      align-items: center;
+}
+
+.popup-container .image-modal-size {
+      width: 40px;
+      height: 40px;
+}
+
+.popup-container .calendar-inner {
+      width: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      column-gap: 27px;
+}
+
+.popup-container .modal-dialog {
+      margin: 0;
+      height: 100vh;
+      margin-left: auto;
+      transform: translateX(50%);
+      max-width: 1640px;
+}
+
+.popup-container .modal-content {
+      height: 85%;
+      border-radius: 30px 0px 0px 30px;
+}
+
+.popup-container .modal-header button {
+      margin: 0 !important;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+}
+
+.popup-container .search-bar-container {
+      display: flex;
+      column-gap: 20px;
+}
+
+.popup-container .modal-form input {
+      border-radius: 220px 0 0 220px;
+      border: 1px solid #FC8714;
+      box-shadow: 0px 4px 14px 0px rgba(58, 58, 58, 0.03) inset;
+      padding: 18px 25px;
+      max-height: 52px;
+}
+
+.popup-container .modal-form button {
+      border-radius: 0px 220px 220px 0px;
+      background: linear-gradient(180deg, #FC8814 0%, #F86403 100%);
+      border: none;
+      width: 74px;
+      height: 52px
+}
+
+.popup-container button .image-modal-size img {
+      width: 60%;
+}
+
+.popup-container .modal-form button .image-modal-size img {
+      filter: invert(1);
+}
+
+.modal-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.popup-container .modal-form input:focus-visible {
+      outline: 0;
+      border: 1px solid #FC8714;
+}
+
+.popup-container .calendar {
+      border-radius: 220px;
+      border: 1px solid rgba(37, 35, 60, 0.50);
+      box-shadow: 0px 4px 14px 0px rgba(58, 58, 58, 0.03) inset;
+      background: #fff;
+}
+
+.popup-container .ui-datepicker {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      z-index: 9999;
+      max-width: 400px;
+      height: 336px;
+      width: 100%;
+}
+
+.popup-container .ui-datepicker .ui-datepicker-title span {
+      color: #1E3767;
+
+      text-align: center;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.14px;
+}
+
+.popup-container .ui-datepicker-header {
+      background: transparent;
+      border: none;
+}
+
+.popup-container .ui-datepicker-buttonpane {
+      display: none;
+}
+
+/* Customize the datepicker icons */
+.popup-container .ui-datepicker-prev {
+      background: transparent;
+      border: none;
+      background-image: url(../images/calendar-svg-arrow.svg);
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      background-size: 7px;
+      background-position: center;
+}
+
+.popup-container .ui-datepicker-next {
+      background: transparent;
+      border: none;
+      background-image: url(../images/calendar-svg-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 7px;
+      background-position: center;
+}
+
+.popup-container .ui-datepicker-calendar thead th {
+      color: #1E3767;
+      text-align: center;
+      font-family: var(--primary-font);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+}
+
+.popup-container .ui-datepicker-calendar tbody tr td a {
+      color: #1E3767;
+      background: none;
+      border: none;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      font-family: var(--primary-font);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin: 6px 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+}
+
+.popup-container .ui-datepicker .ui-state-active {
+      background-color: #EF8322;
+      color: #fff;
+}
+
+.popup-container .modal-header .calendar {
+      width: 222px;
+}
+
+.popup-container .modal-header .calendar p {
+      white-space: nowrap;
+}
+
+.down-arrow {
+      min-width: 12px;
+      width: 100%;
+      height: 14px;
+      transform: rotate(90deg);
+}
+
+.show-enteries {
+      display: flex;
+      align-items: center;
+      column-gap: 11px;
+}
+
+.show-enteries button {
+      margin-top: -10px;
+}
+
+.show-enteries p {
+      color: #25233C;
+
+      font-family: var(--primary-font);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      /* 106.667% */
+      letter-spacing: 0.038px;
+}
+
+.show-enteries select {
+      border-radius: 6px;
+      border: 1px solid rgba(37, 35, 60, 0.50);
+      background: #FFF;
+      width: 66px;
+      height: 42px;
+      position: relative;
+      padding: 6px;
+      color: #F86202;
+
+      font-family: var(--primary-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      appearance: none;
+      /* Hide the default arrow */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+}
+
+.show-enteries select::after {
+      content: ' ';
+      position: absolute;
+      background-image: url('../images/calendar-svg-arrow.svg');
+      display: block;
+      width: 20px;
+      height: 20px;
+}
+
+.show-enteries select:focus-visible {
+      outline: none;
+}
+
+.show-enteries select::-ms-expand {
+      display: none;
+}
+
+.show-enteries select option {
+      padding: 8px;
+      color: #ff883e;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+}
+
+.popup-container .table-responsive {
+      max-width: 1640px;
+      overflow-x: auto;
+      max-height: 700px;
+      overflow-y: auto;
+}
+
+.popup-container .table-responsive::-webkit-scrollbar {
+      width: 4px;
+}
+
+.popup-container .table-responsive::-webkit-scrollbar-track {
+      background: #fff;
+      width: 20px;
+}
+
+.popup-container .table-responsive::-webkit-scrollbar-thumb {
+      border-radius: 200px;
+      background: #D9D9D9;
+}
+
+.popup-container table {
+      width: 100%;
+}
+
+.popup-container .modal-body {
+      padding: 0;
+}
+
+.popup-container .table-header {
+      background: #3A3A3A;
+}
+
+.popup-container .table-header th {
+      color: #F6F6FB;
+
+      font-family: var(--primary-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0.16px;
+}
+
+.popup-container .table-header th:first-child {
+      padding: 21px 0px 21px 40px;
+}
+
+.popup-container .table-body td:first-child {
+      padding: 21px 0px 21px 56px;
+      color: #5A596B;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+}
+
+.popup-container .table-body tr {
+      border: 0.5px solid #C2C5CC;
+}
+
+.popup-container .table-body td {
+      color: #25233C;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.14px;
+}
+
+.popup-container .biller {
+      display: flex;
+      align-items: center;
+      column-gap: 19px;
+      padding: 21px 0;
+}
+
+.popup-container .price p {
+      color: #25233C;
+      font-family: var(--primary-font);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+}
+
+.popup-container .price p span {
+      color: #28AE62;
+
+      text-align: center;
+      font-family: var(--primary-font);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+}
+
+
+.popup-container .status p {
+      color: #F82002;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+      border-radius: 154px;
+      border: 1.1px solid rgba(248, 46, 2, 0.20);
+      background: #FFFCFA;
+      text-align: center;
+      padding: 10px 31px;
+      max-width: 100px;
+      max-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.popup-container .datetime p span {
+      color: #5A596B;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+
+}
+
+.popup-container .datetime p {
+      color: #5A596B;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.14px;
+}
+
+.popup-container .details {
+      display: flex;
+      align-items: center;
+      column-gap: 6px;
+      border-radius: 154px;
+      border: 1.1px solid rgba(36, 39, 44, 0.20);
+      padding: 9px 21px;
+      max-width: 100px;
+      max-height: 34px;
+      transition: all 0.5s ease;
+      cursor: pointer;
+}
+
+.popup-container .details:hover p {
+      color: #ED7623;
+}
+
+.popup-container .details:hover svg path {
+      stroke: #ED7623;
+}
+
+.popup-container .details svg path {
+      stroke: #25233C;
+      transition: all 0.5s ease;
+}
+
+.popup-container .details:hover {
+      border-radius: 154px;
+      border: 1.1px solid #ED7623;
+}
+
+.popup-container .details p {
+      color: #25233C;
+      text-align: center;
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: all 0.5s ease;
+}
+
+/* Modal Footer */
+.popup-container .modal-footer {
+      justify-content: space-between;
+}
+
+.popup-container .pagination-container {
+      display: flex;
+      column-gap: 7px;
+}
+
+.popup-container .pagination-container .back-btn-table-footer {
+      display: flex;
+      column-gap: 5px;
+      border: 1px solid #231F20;
+      padding: 10px 17px;
+      max-width: 80px;
+      max-height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+}
+
+.popup-container .pagination-container .back-btn-table-footer:hover {
+      background: #25233C;
+      border: 1px solid #231F20;
+}
+.popup-container .pagination-container .back-btn-table-footer:hover p {
+      color: #fff;
+}
+.popup-container .pagination-container .next-btn-table-footer:hover {
+      background: #25233C;
+      border: 1px solid #231F20;
+}
+.popup-container .pagination-container .next-btn-table-footer:hover p {
+      color: #fff;
+}
+.popup-container .pagination-container a:hover {
+      background: #FF7B00;
+      border: 1px solid #FF7B00;
+      color: #fff;
+}
+.active-pagination span {
+      color: #fff;
+}
+.active-pagination {
+      background: #FF7B00;
+      border: 1px solid #FF7B00 !important;
+}
+
+.popup-container .pagination-container a {
+      display: flex;
+      column-gap: 5px;
+      border: 1px solid #231F20;
+      padding: 10px 17px;
+      max-width: 80px;
+      max-height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #25233C;   
+      font-family: var(--primary-font);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.14px;
+      text-decoration: none;
+      cursor: pointer;
+}
+
+.popup-container .pagination-container .next-btn-table-footer svg {
+      transform: rotate(180deg);
+}
+
+.popup-container .pagination-container .next-btn-table-footer {
+      display: flex;
+      column-gap: 5px;
+}
+.popup-container .pagination-container .back-btn-table-footer:hover svg path {
+      stroke: #fff;
+}
+.popup-container .pagination-container .next-btn-table-footer:hover svg path {
+      stroke: #fff;
+}
+
+/* Animation  */
+.content-1 {
+      position: relative;
+      right: -140px;
+      display: none;
+}
+
+.content-2 {
+      position: relative;
+      right: -140px;
+      display: none;
+}
+
+.content-3 {
+      position: relative;
+      right: -140px;
+      display: none;
+}
+
+.billing-content-2 {
+      display: none;
+  }
+

@@ -1,0 +1,24 @@
+.topbar-info-container { display: flex; justify-content: space-between; align-items: center; padding: 18px 70px; }
+.back-btn { display: flex; justify-content: center; align-items: center; column-gap: 9px; border-radius: 4px; border: 1px solid #D9D9D9; background: #FFF; box-shadow: 0px -1px 2px 0px rgba(0,0,0,0.08) inset; padding: 7px; width: 74px; height: 30px; transition: all 0.5s ease; }
+.topbar-info { display: flex; justify-content: center; align-items: center; column-gap: 5px; }
+.topbar-info p { color: #23213A; font-family: var(--primary-font); font-size: 15px; font-style: normal; font-weight: 400; line-height: normal; }
+.topbar-info p a { color: #23213A; font-family: var(--primary-font); font-size: 15px; font-style: normal; font-weight: 400; line-height: normal; text-decoration-line: underline; }
+.service-sec-1 h5 { color: #000; font-family: var(--primary-font); font-size: 28px; font-style: normal; font-weight: 700; line-height: normal; margin-bottom: 64px; }
+.service-container { border: 1px solid rgba(150,153,158,0.30); background: #FFF; padding: 54px; margin: 0 70px 34px; }
+.services { display: flex; column-gap: 160px; flex-wrap: wrap; row-gap: 20px; }
+.link-to { text-decoration: none; }
+.link-to .icon { margin-bottom: 26px; }
+.link-to h6 { color: #24272C; font-family: var(--primary-font); font-size: 20px; font-style: normal; font-weight: 400; line-height: normal; letter-spacing: 0.2px; }
+.link-to h6 span { color: #24272C; font-family: var(--primary-font); font-size: 20px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: 0.2px; }
+.more-button-container { box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.07); background: #fff; padding: 30px; border: 1px solid #eee; display: flex; column-gap: 50px; border-radius: 8px; width: 50%; flex-wrap: wrap; row-gap: 20px; max-height: 360px; overflow-y: auto; justify-content: center; }
+/* scroller */
+.more-button-container::-webkit-scrollbar { width: 6px; }
+/* Style scrollbar thumb */
+.more-button-container::-webkit-scrollbar-thumb { background: linear-gradient(180deg,#FC8814 0%,#F86403 100%); border-radius: 5px; }
+/* Style scrollbar thumb on hover */
+.more-button-container::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg,#FC8814 0%,#F86403 100%); }
+.c1 { background: rgba(252,174,51,0.15); box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.07); padding: 58px; margin-bottom: 20px; }
+.c2 { background: #FBFFF3; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.07); padding: 58px; margin-bottom: 20px }
+.c3 { background: #EAF2FF; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.07); padding: 58px; margin-bottom: 20px }
+.c4 { background: #F8F8F8; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.07); padding: 58px; margin-bottom: 20px }
+.c5 { background: #FFF8FF; box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.07); padding: 58px; }
