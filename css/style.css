@@ -622,3 +622,12 @@ p {
       display: none;
   }
 
+/* Hide all tab content initially */
+.tab-content .tab-pane {
+      display: none;
+  }
+  
+  /* Show the content of the active tab */
+  .tab-content .tab-pane.active {
+      display: block;
+  }

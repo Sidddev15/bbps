@@ -22,46 +22,46 @@ $(document).ready(function () {
   });
   // -------
 
-//* FORM FIELD HIDE/SHOW
-// Hide all fields except the first one initially
-$(".sf-1").hide();
-$(".sf-2").hide();
-$(".sf-3").hide();
-$(".sf-4").hide();
+  //* FORM FIELD HIDE/SHOW
+  // Hide all fields except the first one initially
+  $(".sf-1").hide();
+  $(".sf-2").hide();
+  $(".sf-3").hide();
+  $(".sf-4").hide();
 
-// Show first field initially
-$(".sf-1:first").show(); // Show the first element with class "sf-1"
+  // Show first field initially
+  $(".sf-1:first").show(); // Show the first element with class "sf-1"
 
-// Function to show next field and hide current field
-function showNextField(currentField, nextField) {
-  $(currentField).hide();
-  $(nextField).show();
-}
-
-// Function to handle "Next" button click
-$(".next-btn").click(function () {
-  if ($(".sf-1:visible").length) {
-    // Show field 2
-    showNextField(".sf-1", ".sf-2");
-  } else if ($(".sf-2:visible").length) {
-    // Show field 3
-    showNextField(".sf-2", ".sf-3");
-  } else if ($(".sf-3:visible").length) {
-    // Show field 4 and update container height
-    $(".form-container").css("height", "560px");
-    $(".next-btn").text("Proceed To Payment");
-    $(".next-btn").attr({
-      "data-bs-toggle": "modal",
-      "data-bs-target": "#billingmodal",
-    });
-    showNextField(".sf-3", ".sf-4");
-    // Show all fields when field 4 is shown
-    $(".sf-1").show();
-    $(".sf-2").show();
-    $(".sf-3").show();
-    $(".sf-4").show();
+  // Function to show next field and hide current field
+  function showNextField(currentField, nextField) {
+    $(currentField).hide();
+    $(nextField).show();
   }
-});
+
+  // Function to handle "Next" button click
+  $(".next-btn").click(function () {
+    if ($(".sf-1:visible").length) {
+      // Show field 2
+      showNextField(".sf-1", ".sf-2");
+    } else if ($(".sf-2:visible").length) {
+      // Show field 3
+      showNextField(".sf-2", ".sf-3");
+    } else if ($(".sf-3:visible").length) {
+      // Show field 4 and update container height
+      $(".form-container").css("height", "560px");
+      $(".next-btn").text("Proceed To Payment");
+      $(".next-btn").attr({
+        "data-bs-toggle": "modal",
+        "data-bs-target": "#billingmodal",
+      });
+      showNextField(".sf-3", ".sf-4");
+      // Show all fields when field 4 is shown
+      $(".sf-1").show();
+      $(".sf-2").show();
+      $(".sf-3").show();
+      $(".sf-4").show();
+    }
+  });
 
   //* TO UPDATE FIELD 2 AND FIELD 3 ON CLICK OF SLIDE MENU
   // 1
@@ -327,10 +327,18 @@ $(".next-btn").click(function () {
   $(".nav-tab-main").click(function () {
     var target = $(this).data("tab");
 
-    $(".tab-content").removeClass("active");
-    $(".nav-tab-main").removeClass("active active-tab"); // Remove active-tab class from all tab items
-    $(this).addClass("active active-tab"); // Add active and active-tab class to the clicked tab item
+    // Remove active class from all tab items
+    $(".nav-tab-main").removeClass("active active-tab");
 
+    // Add active class to the clicked tab item
+    $(this).addClass("active active-tab");
+
+    // Hide all tab content except for the clicked tab
+    $(".tab-content .tab-pane")
+      .not("#" + target)
+      .removeClass("active");
+
+    // Show the content of the clicked tab
     $("#" + target).addClass("active");
   });
 });
