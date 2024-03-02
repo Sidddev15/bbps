@@ -8,6 +8,20 @@ $(document).ready(function () {
       $(this).prev("label").removeClass("label-up");
     }
   });
+
+  // ACTIVE INPUT
+  // Function to add active-input class to input field when clicked
+  $(".field1 input").on("click", function () {
+    $(this).addClass("active-input");
+  });
+
+  // Function to remove active-input class from input field if empty
+  $(".field1 input").on("blur", function () {
+    if ($(this).val().trim() === "") {
+      $(this).removeClass("active-input");
+    }
+  });
+
   // --------
 
   //   Eventprevent Default
@@ -16,9 +30,15 @@ $(document).ready(function () {
   });
 
   // MENU SHOW/HIDE
-  $(".tab-dropdown").hide();
+  $("#service-list-a").click(function () {
+    $(".tab-dropdown").slideUp("slow");
+  });
+
   $("#proiority-queue").click(function () {
     $(".tab-dropdown").slideToggle("slow");
+  });
+  $(".tab-dropdown a").click(function () {
+    $(".tab-dropdown").slideUp("slow");
   });
   // -------
 
@@ -67,26 +87,26 @@ $(document).ready(function () {
   // 1
   $("#operator").on("click", function () {
     hideAllContent();
-    $("#content-1").css("display", "block").animate({ right: "0" }, "slow");
+    $("#content-1").css("display", "block").animate({ right: "0" }, "fast");
   });
   $(".next-btn").on("click", function () {
-    $("#content-1").fadeOut("slow").animate({ right: "-140px" }, "slow");
+    $("#content-1").fadeOut("fast").animate({ right: "-140px" }, "fast");
   });
   // 2
   $("#circle").on("click", function () {
     hideAllContent();
-    $("#content-2").css("display", "block").animate({ right: "0" }, "slow");
+    $("#content-2").css("display", "block").animate({ right: "0" }, "fast");
   });
   $(".next-btn").on("click", function () {
-    $("#content-2").fadeOut("slow").animate({ right: "-140px" }, "slow");
+    $("#content-2").fadeOut("fast").animate({ right: "-140px" }, "fast");
   });
   // 3
   $("#amount").on("click", function () {
     hideAllContent();
-    $("#content-3").css("display", "block").animate({ right: "0" }, "slow");
+    $("#content-3").css("display", "block").animate({ right: "0" }, "fast");
   });
   $(".next-btn").on("click", function () {
-    $("#content-3").fadeOut("slow").animate({ right: "-140px" }, "slow");
+    $("#content-3").fadeOut("fast").animate({ right: "-140px" }, "fast");
   });
   // Function to hide all content sections
   function hideAllContent() {
@@ -340,5 +360,20 @@ $(document).ready(function () {
 
     // Show the content of the clicked tab
     $("#" + target).addClass("active");
+  });
+
+  // TAB DROPDOWN
+  // Handle click on dropdown menu items
+  $(".tab-dropdown .service-list a").click(function (e) {
+    e.preventDefault(); // Prevent default link behavior
+
+    // Get the data-tab attribute value
+    var target = $(this).data("tab");
+
+    // Hide all tab content
+    $(".tab-content .tab-pane").hide();
+
+    // Show the corresponding tab content
+    $("#" + target).show();
   });
 });
