@@ -376,4 +376,27 @@ $(document).ready(function () {
     // Show the corresponding tab content
     $("#" + target).show();
   });
+
+  //* Below 992PX operator, circle, amount POPUP
+  $("#operator").on("click", function () {
+    // Check if screen width is below 992px
+    if ($(window).width() < 992) {
+      // Show the offcanvas modal
+      $("#operator-offcanvas").offcanvas("show");
+    }
+  });
+  $("#circle").on("click", function () {
+    // Check if screen width is below 992px
+    if ($(window).width() < 992) {
+      // Show the offcanvas modal
+      $("#circle-offcanvas").offcanvas("show");
+    }
+  });
+  $("#amount").on("click", function () {
+    // Check if screen width is below 992px
+    if ($(window).width() < 992) {
+      // Show the offcanvas modal
+      $("#amount-offcanvas").offcanvas("show");
+    }
+  });
 });
