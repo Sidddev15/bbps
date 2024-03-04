@@ -255,19 +255,22 @@
                                     <!-- ? Field 1 -->
                                     <div class="field1 sf-1" id="field1">
                                         <label for="mobile">Mobile Number</label>
-                                        <input type="text" name="mobile" id="mobile" maxlength="10" />
+                                        <input type="text" name="mobile" id="mobile" maxlength="10"
+                                            autocomplete="off" />
                                     </div>
                                     <div class="error-message">This field is empty</div>
                                     <!-- ? Field 2 -->
                                     <div class="field1 sf-2" id="field2">
                                         <label for="operator">Operator</label>
                                         <input type="text" name="operator" id="operator" />
+                                        <img id="operator-img" src="" alt="operator" />
                                     </div>
                                     <div class="error-message">This field is empty</div>
                                     <!-- ? Field 3 -->
                                     <div class="field1 sf-3" id="field3">
                                         <label for="cirlce">Circle</label>
                                         <input type="text" name="circle" id="circle" />
+                                        <img id="circle-img" src="" alt="circle" />
                                     </div>
                                     <div class="error-message">This field is empty</div>
                                     <!-- ? Field 4 -->
@@ -285,6 +288,18 @@
                                     </div>
                                 </div>
                             </form>
+                            <div class="recent-payment-button-container">
+                                <!-- ! HERE RECENT -->
+                                <button class="recent-payment-tab" data-bs-toggle="offcanvas"
+                                    data-bs-target="#recent-tab-offcanvas" aria-controls="offcanvasBottom">
+                                    <h6>Recent Payment</h6>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12"
+                                        fill="none">
+                                        <path d="M1 1L6 6L1 11" stroke="#FF7B00" stroke-width="1.4"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                         <div class="col-lg-8">
                             <div class="side-item-container">
@@ -307,7 +322,7 @@
                                         <!-- B -->
                                         <div class="op-box">
                                             <div class="op-img">
-                                                <img class="img-fluid" src="images/Group 1000004277.png" alt="airtel">
+                                                <img class="img-fluid" src="images/Group 1000004275.png" alt="airtel">
                                             </div>
                                             <div class="op-text">
                                                 <span>Airtel</span>
@@ -5981,6 +5996,9 @@
                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
+                        <div class="modal-header-bill">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <div class="modal-body">
                             <div class="billing-content-1">
                                 <h1>Billing Details</h1>
@@ -6129,40 +6147,1123 @@
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="operator-offcanvas"
                 aria-labelledby="offcanvasBottomLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Select an Operator</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body small">
-                    ...
+                <div class="offcanvas-body">
+                    <div class="content-tab-1">
+                        <div class="operator-container">
+                            <!-- A -->
+                            <div class="op-box" data-bs-dismiss="offcanvas">
+                                <div class="op-img">
+                                    <img class="img-fluid" src="images/Group 1000004277.png" alt="airtel">
+                                </div>
+                                <div class="op-text">
+                                    <span>Airtel</span>
+                                </div>
+                            </div>
+                            <!-- B -->
+                            <div class="op-box" data-bs-dismiss="offcanvas">
+                                <div class="op-img">
+                                    <img class="img-fluid" src="images/Group 1000004276.png" alt="airtel">
+                                </div>
+                                <div class="op-text">
+                                    <span>Airtel</span>
+                                </div>
+                            </div>
+                            <!-- C -->
+                            <div class="op-box" data-bs-dismiss="offcanvas">
+                                <div class="op-img">
+                                    <img class="img-fluid" src="images/Group 1000004277.png" alt="airtel">
+                                </div>
+                                <div class="op-text">
+                                    <span>Airtel</span>
+                                </div>
+                            </div>
+                            <!-- D -->
+                            <div class="op-box" data-bs-dismiss="offcanvas">
+                                <div class="op-img">
+                                    <img class="img-fluid" src="images/Group 1000004277.png" alt="airtel">
+                                </div>
+                                <div class="op-text">
+                                    <span>Airtel</span>
+                                </div>
+                            </div>
+                            <!-- E -->
+                            <div class="op-box" data-bs-dismiss="offcanvas">
+                                <div class="op-img">
+                                    <img class="img-fluid" src="images/Group 1000004277.png" alt="airtel">
+                                </div>
+                                <div class="op-text">
+                                    <span>Airtel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-         <!-- Circle Popup -->
-         <div class="modal-view-container">
+        <!--! Circle Popup -->
+        <div class="modal-view-container">
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="circle-offcanvas"
                 aria-labelledby="offcanvasBottomLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Select Your Circle</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body small">
-                    ...
+                    <div class="location-container">
+                        <!-- A -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Andhra Pradesh</span>
+                            </div>
+                        </div>
+                        <!-- B -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Assam</span>
+                            </div>
+                        </div>
+                        <!-- C -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Bihar Jharkhand</span>
+                            </div>
+                        </div>
+                        <!-- D -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Chennai</span>
+                            </div>
+                        </div>
+                        <!-- E -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Delhi NCR</span>
+                            </div>
+                        </div>
+                        <!-- F -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Goa</span>
+                            </div>
+                        </div>
+                        <!-- G -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Gujarat</span>
+                            </div>
+                        </div>
+                        <!-- H -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Haryana</span>
+                            </div>
+                        </div>
+                        <!-- I -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Himachal Pradesh</span>
+                            </div>
+                        </div>
+                        <!-- J -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Jammu Kashmir</span>
+                            </div>
+                        </div>
+                        <!-- K -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Maharashtra</span>
+                            </div>
+                        </div>
+                        <!-- L -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Madhya Pradesh Chhattisgarh</span>
+                            </div>
+                        </div>
+                        <!-- M -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Karnataka</span>
+                            </div>
+                        </div>
+                        <!-- N -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Kerala</span>
+                            </div>
+                        </div>
+                        <!-- O -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Kolkata</span>
+                            </div>
+                        </div>
+                        <!-- P -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Mumbai</span>
+                            </div>
+                        </div>
+                        <!-- Q -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>North East</span>
+                            </div>
+                        </div>
+                        <!-- R -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Orissa</span>
+                            </div>
+                        </div>
+                        <!-- S -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Punjab</span>
+                            </div>
+                        </div>
+                        <!-- T -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Rajasthan</span>
+                            </div>
+                        </div>
+                        <!-- U -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Tamil Nadu</span>
+                            </div>
+                        </div>
+                        <!-- V -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Telangana</span>
+                            </div>
+                        </div>
+                        <!-- W -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>UP East</span>
+                            </div>
+                        </div>
+                        <!-- X -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>UP West</span>
+                            </div>
+                        </div>
+                        <!-- Y -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>West Bengal</span>
+                            </div>
+                        </div>
+                        <!-- Z -->
+                        <div class="location-box" data-bs-dismiss="offcanvas">
+                            <div class="location-img">
+                                <img class="img-fluid" src="images/hydrabad.png" alt="location name">
+                            </div>
+                            <div class="location-text">
+                                <span>Uttarakhand</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-         <!-- Amount Popup -->
-         <div class="modal-view-container">
+        <!--!  Amount Popup -->
+        <div class="modal-view-container amount">
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="amount-offcanvas"
                 aria-labelledby="offcanvasBottomLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Choose Your Plans</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body small">
-                    ...
+                    <div class="tab-responsive">
+                        <!-- A -->
+                        <div class="tab-container">
+                            <ul>
+                                <li class="inner-main-tab" data-tab="tabinner-1"><a href="javascript:void(0)"> Combo</a>
+                                </li>
+                                <li class="inner-main-tab" data-tab="tabinner-2"><a href="javascript:void(0)"> Date</a>
+                                </li>
+                                <li class="inner-main-tab" data-tab="tabinner-3"><a href="javascript:void(0)"> Disney
+                                        Hotstar Plan</a></li>
+                                <li class="inner-main-tab" data-tab="tabinner-4"><a href="javascript:void(0)"> Hero
+                                        Unlimited</a></li>
+                                <li class="inner-main-tab" data-tab="tabinner-5"><a href="javascript:void(0)">
+                                        International Roaming</a></li>
+                                <li class="inner-main-tab" data-tab="tabinner-6"><a href="javascript:void(0)"> Plan
+                                        Voucher</a></li>
+                                <li class="inner-main-tab" data-tab="tabinner-7"><a href="javascript:void(0)"> Top
+                                        Up</a></li>
+                                <li class="inner-main-tab" data-tab="tabinner-8"><a href="javascript:void(0)"> Unlimited
+                                        Pack</a></li>
+                                <li class="inner-main-tab" data-tab="tabinner-9"><a href="javascript:void(0)"> Other</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- B -->
+                        <!-- <div class="tab-pane-inner" id="tabinner-1"> -->
+                        <div class="plan-container">
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 1 -->
+                            <div class="plan-box-main">
+                                <div class="plan-box-content">
+                                    <h5>Talktime: <span>0.00</span> / Location: <span>Noida</span>
+                                    </h5>
+                                    <p>Get 500 MB Data + 100 Mins IC+OG <span> (India + Local)
+                                        </span>+ 10
+                                        SMS
+                                        <span> (Covers - US,
+                                            Europe, Gulf & More - set 1).</span> 250 MB Data + 50
+                                        Mins IC+OG
+                                        <span> (India +
+                                            Local)</span> +
+                                        5 SMS <span> (Covers - Africa, Maldives & More - Set 2)
+                                        </span>
+                                    </p>
+                                    <h6>Validity: <span>28 Day</span></h6>
+                                </div>
+                                <div class="plan-box-button" data-bs-dismiss="offcanvas">
+                                    <button>
+                                        <p><span>₹</span>649</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <!-- C -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ! Recent Payment -->
+        <div class="recent-payment-container popup-container">
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="recent-tab-offcanvas"
+                aria-labelledby="offcanvasBottomLabel">
+                <div class="offcanvas-header">
+                    <div class="d-flex-modal">
+                        <div class="show-enteries" id="show-enteries">
+                            <p>Show</p>
+                            <select name="enteries" id="enteries">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="500">500</option>
+                            </select>
+                            <p>Enteries</p>
+                        </div>
+                        <h5 class="modal-title" id="staticBackdropLabel">Recent History</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="recent-tool-container">
+                        <div class="search-bar-container">
+                            <form action="#" method="get" class="modal-form">
+                                <input type="search" placeholder="Search transaction Id..." id="searchterm-1">
+                                <button>
+                                    <div class="image-modal-size">
+                                        <img class="img-fluid" src="images/search-modal.png" alt="search">
+                                    </div>
+                                </button>
+                            </form>
+                            <button class="calendar calen-op-cl">
+                                <div class="image-modal-size calendar-inner" id="datepicker-1">
+                                    <p class="date-selected" id="date-selected-1">29 Feb 2024</p>
+                                    <img class="img-fluid" src="images/calender.png" alt="calendar">
+                                    <div class="down-arrow">
+                                        <img class="img-fluid" src="images/calendar-svg-arrow.svg" alt="arrow">
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-body small">
+                    <div class="table-responsive">
+                        <table>
+
+                            <tbody class="table-body">
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 1 -->
+                                <tr>
+                                    <td class="search-transaction">
+                                        <div class="phone-detail-container">
+                                            <div class="ph-number">
+                                                <p>9876543210</p>
+                                            </div>
+                                            <div class="ph-detail" >
+                                                <p>PKB0000014262181321 / Jio / <span>15 Mar 2023</span> - 03:16:24 PM </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="status">
+                                        <p>Failed</p>
+                                    </td>
+                                    <td class="price">
+                                        <p><span>₹</span>50.00</p>
+                                    </td>
+                                    <td class="details">
+                                        <p>Details</p>
+                                        <div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12"
+                                                viewBox="0 0 7 12" fill="none">
+                                                <path d="M1 1L6 6L1 11" stroke="#25233C" stroke-width="1.4"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

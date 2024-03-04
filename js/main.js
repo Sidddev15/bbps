@@ -116,27 +116,32 @@ $(document).ready(function () {
   }
 
   //* UPDATING THE CONTENT ON FIELD
+  // ! THIS
   // 1
   $(".op-box").on("click", function () {
-    // Add label-up class to the label of #field2
     $("#field2 label").addClass("label-up");
 
     var opImgSrc = $(this).find(".op-img img").attr("src");
     var opText = $(this).find(".op-text span").text();
 
-    // Set the value of the input field to the combination of image and text
-    $("#operator").val(opImgSrc + " " + opText);
+    // Set the value of the input field to the text
+    $("#operator").val(opText);
+
+    // Set the src attribute of the image tag to the image source
+    $("#operator-img").attr("src", opImgSrc);
   });
   // 2
   $(".location-box").on("click", function () {
-    // Add label-up class to the label of #field3
     $("#field3 label").addClass("label-up");
 
-    var locationImgSrc = $(this).find(".location-img img").attr("src");
-    var locationText = $(this).find(".location-text span").text();
+    var opImgSrc = $(this).find(".location-img img").attr("src");
+    var opText = $(this).find(".location-text span").text();
 
     // Set the value of the input field to the text
-    $("#circle").val(locationImgSrc + " " + locationText);
+    $("#circle").val(opText);
+
+    // Set the src attribute of the image tag to the image source
+    $("#circle-img").attr("src", opImgSrc);
   });
   // 3
   $(".plan-box-button button").on("click", function () {
@@ -202,20 +207,20 @@ $(document).ready(function () {
   });
 
   //* Calendar
-  $(".calen-op-cl").click(function () {
-    var datepicker = $(".ui-datepicker");
-    if (datepicker.is(":visible")) {
-      datepicker.slideUp();
-    } else {
-      datepicker.slideDown();
-    }
+  // Prevent calendar from closing when clicking on arrow buttons
+  $(".calen-op-cl").click(function (e) {
+    e.stopPropagation(); // Stop the click event propagation
   });
-  $("#datepicker").datepicker({
+
+  // Initialize datepicker
+
+  // Execute code only if window width is above 992px
+  $("#datepicker, #datepicker-1").datepicker({
     showButtonPanel: true,
     dateFormat: "dd M yy",
     onSelect: function (dateText, inst) {
       // Update the selected date in the date-selected element
-      $("#date-selected").text(dateText);
+      $("#date-selected, #date-selected-1").text(dateText);
       // Log the selected date to console
       console.log("Selected date:", dateText);
 
@@ -232,6 +237,24 @@ $(document).ready(function () {
         }
       });
     },
+  });
+
+  // Hide datepicker initially
+  $(".ui-datepicker").hide();
+
+  // Show datepicker when clicking on the calendar opener
+  $(".calen-op-cl").click(function () {
+    $(".ui-datepicker").slideToggle();
+  });
+
+  // Close datepicker when clicking outside
+  $(document).click(function (e) {
+    if (
+      !$(e.target).closest(".ui-datepicker").length &&
+      !$(e.target).closest(".calen-op-cl").length
+    ) {
+      $(".ui-datepicker").slideUp();
+    }
   });
 
   // Hide datepicker initially
@@ -271,7 +294,7 @@ $(document).ready(function () {
   });
 
   //* Function to filter table rows based on search term
-  $("#searchterm").on("keyup", function () {
+  $("#searchterm, #searchterm-1").on("keyup", function () {
     var searchTerm = $(this).val().toLowerCase();
     $(".search-transaction").each(function () {
       var textToMatch = $(this).text().toLowerCase();
@@ -399,4 +422,51 @@ $(document).ready(function () {
       $("#amount-offcanvas").offcanvas("show");
     }
   });
+
+  // IMAGE SHOW/HIDE OFFCANVAS CLICK
+  // 1
+  $(".op-box").on("click", function () {
+    // Show the image inside .field1
+    $(".field1 img").css("display", "block");
+
+    // Get the src attribute of the clicked op-box's image
+    var opImgSrc = $(this).find(".op-img img").attr("src");
+
+    // Set the src attribute of the image inside .field1 to opImgSrc
+    $(".field1 img").attr("src", opImgSrc);
+  });
+  // 2
+  $(".location-box").on("click", function () {
+    // Show the image inside .field1
+    $(".field1 img").css("display", "block");
+
+    // Get the src attribute of the clicked op-box's image
+    var opImgSrc = $(this).find(".location-box img").attr("src");
+
+    // Set the src attribute of the image inside .field1 to opImgSrc
+    $(".field1 img").attr("src", opImgSrc);
+  });
+
+  // HIDE BILLING DETAIL
+  // Hide the billing-next-button initially
+  $(".billing-close-button").hide();
+
+  // Show the billing-next-button when clicked
+  $(".billing-next-button").on("click", function () {
+    $(".billing-close-button").show();
+  });
+  // Add click event listener to .billing-next-button
+  $(".billing-next-button").on("click", function () {
+    // Hide the billing-next-button
+    $(this).hide();
+
+    // Hide the .modal-header-bill element
+    $(".billing-detail-popup .modal-header-bill").hide();
+  });
+
+
+  // TO HIDE THE RECENT HISTORY BUTTON
+  $('.next-btn').click(function(){
+    $('.recent-payment-tab').hide();
+});
 });

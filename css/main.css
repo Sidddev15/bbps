@@ -5,7 +5,6 @@
 .inner-section-two {
       border: 1px solid rgba(150, 153, 158, 0.30);
       background: #FFF;
-      /* height:583px;*/
       height: 828px;
       margin: 0 70px 54px 70px;
 }
@@ -32,7 +31,6 @@
       border-radius: 30px 0 0 30px;
       position: absolute;
       top: -380px;
-      /* margin-left: 70px; */
       right: 0;
 }
 
@@ -44,6 +42,7 @@
       max-width: 469px;
       height: 393px;
 }
+
 .form-container-1 {
       height: 560px;
 }
@@ -59,12 +58,22 @@
       flex-direction: column;
       position: relative;
       margin-bottom: 20px;
+      position: relative;
+}
+
+.field1 img {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      display: none;
 }
 
 .field1 label {
       position: absolute;
       transition: top 0.3s ease;
-      padding: 0 4px;
       color: #91909C;
       font-family: var(--primary-font);
       font-size: 16px;
@@ -75,6 +84,9 @@
       top: 50%;
       transform: translateY(-50%);
       left: 15px;
+      background: #fff;
+      padding: 12px 0;
+      z-index: 3;
 }
 
 .field1 input {
@@ -93,6 +105,14 @@
 
 .field1 input:focus-visible {
       outline: none;
+}
+
+.sf-2 input {
+      padding-left: 60px;
+}
+
+.sf-3 input {
+      padding-left: 60px;
 }
 
 .next-step-btn-container .next-btn {
@@ -117,6 +137,7 @@
       top: 0 !important;
       background: #fff;
       font-size: 15px !important;
+      padding: 0 4px !important;
 }
 
 .inner-section-three form h5 {
@@ -144,10 +165,11 @@
 .inner-section-three {
       margin: 0 140px;
       position: relative;
-      /* top:-430px;*/
       top: -675px;
 }
 
+/* top:-430px;
+ */
 /* Nav tab */
 .navbar-container {
       display: flex;
@@ -180,25 +202,25 @@
       background: #FF7B00;
       box-shadow: 1px 5px 22px 0px rgba(0, 0, 0, 0.10);
 }
+
 .nav-tab-main.active {
       border-radius: 10px;
       background: #FF7B00;
-      box-shadow: 1px 5px 22px 0px rgba(0, 0, 0, 0.10);
+      /* box-shadow: 1px 5px 22px 0px rgba(0, 0, 0, 0.10); */
 }
 
 .nav-tab-main.active p {
       color: #fff;
-  }
+}
 
-  .radio-container label {
+.radio-container label {
       color: #5A596B;
-
       font-family: var(--primary-font);
       font-size: 15px;
       font-style: normal;
       font-weight: 500;
       line-height: 20px;
-  }
+}
 
 .nav-tab-main:hover p {
       color: #fff;
@@ -474,6 +496,7 @@
       max-width: 1000px;
       overflow-x: auto;
 }
+
 .tab-container ul::-webkit-scrollbar {
       height: 4px;
 }
@@ -484,7 +507,7 @@
 }
 
 .tab-container ul::-webkit-scrollbar-track {
-      background-color:transparent;
+      background-color: transparent;
 }
 
 .tab-container ul li a {
@@ -627,8 +650,7 @@
       border-radius: 15px;
       background: #FFF;
       max-width: 570px;
-      height:631px;
-      /* height: 830px; */
+      height: 631px;
       padding: 30px;
 }
 
@@ -671,9 +693,10 @@
       background: #FDFFF9;
       border-radius: 10px;
       padding: 15px 30px;
+      margin-bottom: 29px;
 }
 
-.billing-detail-popup .payment-container table tbody tr td {
+.billing-detail-popup .payment-container table tbody tr td:first-child {
       width: 176px;
 }
 
@@ -685,13 +708,20 @@
       text-align: right;
 }
 
-.billing-detail-popup .payment-container {
-      margin-bottom: 29px;
-}
-
 .billing-detail-popup .continuation-button {
       display: flex;
       flex-direction: column;
+}
+
+.billing-content-2 .bill-detail-container table tbody tr td:last-child {
+      color: #3A3A3A;
+
+text-align: right;
+font-family: var(--primary-font);
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px;
 }
 
 .billing-detail-popup .continuation-button .billing-next-button {
@@ -870,6 +900,54 @@
       padding: 15px 22px;
 }
 
+.billing-detail-popup  .modal-body .detail-container tbody td:first-child {
+      color: #25233C;
+font-family: var(--primary-font);
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 200% */
+letter-spacing: 0.16px;
+}
+.billing-detail-popup  .modal-body .detail-container tbody td:last-child {
+      color: #25233C;
+      text-align: right;
+      font-family: var(--primary-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 32px; /* 200% */
+      letter-spacing: 0.16px;
+}
+
+.billing-detail-popup  .modal-body .payment-container tbody td:first-child {
+      color: #3A3A3A;
+font-family: var(--primary-font);
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px;
+}
+.billing-detail-popup  .modal-body .payment-container tbody td:last-child {
+      color: #3A3A3A;
+text-align: right;
+font-family: var(--primary-font);
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px;
+}
+.billing-detail-popup  .modal-body .payment-container tbody td span:last-child {
+      color: #28AE62;
+      font-family: var(--primary-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 32px;
+}
+.billing-detail-popup .modal-header-bill {
+      display: none;
+}
 .billing-content-2 h6 {
       color: #25233C;
       padding-bottom: 16px;
@@ -879,6 +957,7 @@
       font-weight: 600;
       line-height: normal;
 }
+
 
 .billing-content-2 .bill-detail-container {
       border-radius: 10px;
@@ -893,7 +972,6 @@
 
 .billing-content-2 .bill-detail-container table tbody tr td {
       color: #3A3A3A;
-
       font-family: var(--primary-font);
       font-size: 15px;
       font-style: normal;
@@ -903,4 +981,60 @@
 
 .billing-content-2 .bill-detail-container table tbody tr td:last-child {
       text-align: right;
+}
+
+/** TAB */
+.offcanvas {
+      height: 485px !important;
+      border-radius: 25px 25px 0px 0px;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      background: #FFF;
+      box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+
+}
+
+.offcanvas .offcanvas-header {
+      border-bottom: 1px solid #E6E5EB;
+}
+
+.offcanvas .offcanvas-header h5 {
+      color: #3A3A3A;
+      font-family: var(--primary-font);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding: 0px 29px;
+}
+
+.content-tab-1 .operator-container .op-box {
+      border-right: 1px solid #E6E5EB;
+      border-bottom: 1px solid #E6E5EB;
+      height: 200px;
+      max-width: 33.3%;
+      width: 100%;
+}
+
+.offcanvas-body {
+      padding: 0;
+}
+
+.offcanvas-body .operator-container {
+      padding: 0;
+      column-gap: 0;
+      row-gap: 0;
+}
+
+
+
+.navbar-container::-webkit-scrollbar {
+      width: 0px;
+}
+
+.navbar-container::-webkit-scrollbar-thumb {
+      background: transparent;
+}
+
+.navbar-container::-webkit-scrollbar-track {
+      background-color: transparent;
 }
