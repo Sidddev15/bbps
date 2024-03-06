@@ -9,6 +9,24 @@ $(document).ready(function () {
     }
   });
 
+  // ----------------
+
+  // Increase the height after third click 
+  // Initialize click counter
+  var clickCount = 0;
+
+  // Function to handle button click
+  $(".next-btn").click(function() {
+    // Increment click counter
+    clickCount++;
+
+    // Check if the button has been clicked three times
+    if (clickCount === 3) {
+      // Change the height of .inner-section-two to 792px
+      $(".inner-section-two").css("height", "792px");
+    }
+  });
+
   // ACTIVE INPUT
   // Function to add active-input class to input field when clicked
   $(".field1 input").on("click", function () {
@@ -83,36 +101,67 @@ $(document).ready(function () {
     }
   });
 
+  // * DISABLE THE BUTTON IN INPUT FIELD NOT FILLED
+     // Disable next button initially
+     $(".next-btn").prop("disabled", true);
+    
+     // Event listener for input field changes
+     $(".field1 input[type='text']").on("input", function() {
+         // Check if any input fields are filled
+         if (checkInputsFilled()) {
+             $(".next-btn").prop("disabled", false); // Enable next button
+         } else {
+             $(".next-btn").prop("disabled", true); // Disable next button
+         }
+     });
+     
+     // Event listener for "Next" button click
+     $(".next-btn").on("click", function() {
+         $(this).prop("disabled", false); // Disable the button when clicked
+     });
+     
+     // Function to check if any input field is filled
+     function checkInputsFilled() {
+         var anyInputFilled = false;
+         $(".field1 input[type='text']").each(function() {
+             if ($(this).val().trim() !== "") {
+                 anyInputFilled = true;
+                 return false; // Exit the loop early if any input is filled
+             }
+         });
+         return anyInputFilled;
+     }
+
   //* TO UPDATE FIELD 2 AND FIELD 3 ON CLICK OF SLIDE MENU
   // 1
-  $("#operator").on("click", function () {
+  $("#operator, #change-op-btn").on("click", function () {
     hideAllContent();
-    $("#content-1").css("display", "block").animate({ right: "0" }, "fast");
+    $("#content-1").css("display", "block").animate({ right: "0" }, 200);
   });
   $(".next-btn").on("click", function () {
-    $("#content-1").fadeOut("fast").animate({ right: "-140px" }, "fast");
+    $("#content-1").fadeOut(200).animate({ right: "-140px" }, 200);
   });
   // 2
-  $("#circle").on("click", function () {
+  $("#circle, #change-cir-btn").on("click", function () {
     hideAllContent();
-    $("#content-2").css("display", "block").animate({ right: "0" }, "fast");
+    $("#content-2").css("display", "block").animate({ right: "0" }, 200);
   });
   $(".next-btn").on("click", function () {
-    $("#content-2").fadeOut("fast").animate({ right: "-140px" }, "fast");
+    $("#content-2").fadeOut(200).animate({ right: "-140px" }, 200);
   });
   // 3
   $("#amount").on("click", function () {
     hideAllContent();
-    $("#content-3").css("display", "block").animate({ right: "0" }, "fast");
+    $("#content-3").css("display", "block").animate({ right: "0" }, 200);
   });
   $(".next-btn").on("click", function () {
-    $("#content-3").fadeOut("fast").animate({ right: "-140px" }, "fast");
+    $("#content-3").fadeOut(200).animate({ right: "-140px" }, 200);
   });
   // Function to hide all content sections
   function hideAllContent() {
     $("#content-1, #content-2, #content-3")
-      .fadeOut("slow")
-      .animate({ right: "-140px" }, "slow");
+      .fadeOut(200)
+      .animate({ right: "-140px" }, 200);
   }
 
   //* UPDATING THE CONTENT ON FIELD
@@ -127,21 +176,22 @@ $(document).ready(function () {
     // Set the value of the input field to the text
     $("#operator").val(opText);
 
-    // Set the src attribute of the image tag to the image source
+    // Set the src attribute of the operator image tag to the image source
     $("#operator-img").attr("src", opImgSrc);
   });
+
   // 2
   $(".location-box").on("click", function () {
     $("#field3 label").addClass("label-up");
 
-    var opImgSrc = $(this).find(".location-img img").attr("src");
-    var opText = $(this).find(".location-text span").text();
+    var locImgSrc = $(this).find(".location-img img").attr("src");
+    var locText = $(this).find(".location-text span").text();
 
     // Set the value of the input field to the text
-    $("#circle").val(opText);
+    $("#circle").val(locText);
 
-    // Set the src attribute of the image tag to the image source
-    $("#circle-img").attr("src", opImgSrc);
+    // Set the src attribute of the circle image tag to the image source
+    $("#circle-img").attr("src", locImgSrc);
   });
   // 3
   $(".plan-box-button button").on("click", function () {
@@ -206,19 +256,11 @@ $(document).ready(function () {
     adjustElements();
   });
 
-  //* Calendar
-  // Prevent calendar from closing when clicking on arrow buttons
-  $(".calen-op-cl").click(function (e) {
-    e.stopPropagation(); // Stop the click event propagation
-  });
-
-  // Initialize datepicker
-
-  // Execute code only if window width is above 992px
-  $("#datepicker, #datepicker-1").datepicker({
-    showButtonPanel: true,
-    dateFormat: "dd M yy",
-    onSelect: function (dateText, inst) {
+// Initialize datepicker
+$("#datepicker, #datepicker-1").datepicker({
+  showButtonPanel: true,
+  dateFormat: "dd M yy",
+  onSelect: function(dateText, inst) {
       // Update the selected date in the date-selected element
       $("#date-selected, #date-selected-1").text(dateText);
       // Log the selected date to console
@@ -228,43 +270,45 @@ $(document).ready(function () {
       var selectedDate = $.datepicker.formatDate("dd M yy", new Date(dateText));
 
       // Loop through each table row
-      $(".datetime").each(function () {
-        var rowDate = $(this).find("span").text().trim(); // Get the date text in the table row
-        if (rowDate === selectedDate) {
-          $(this).closest("tr").show(); // Show the row if it matches the selected date
-        } else {
-          $(this).closest("tr").hide(); // Hide the row if it doesn't match the selected date
-        }
+      $(".datetime").each(function() {
+          var rowDate = $(this).find("span").text().trim(); // Get the date text in the table row
+          if (rowDate === selectedDate) {
+              $(this).closest("tr").show(); // Show the row if it matches the selected date
+          } else {
+              $(this).closest("tr").hide(); // Hide the row if it doesn't match the selected date
+          }
       });
-    },
-  });
+  },
+});
 
-  // Hide datepicker initially
-  $(".ui-datepicker").hide();
+// Override the click event for the datepicker prev/next buttons
+$(document).on("click", ".ui-datepicker-prev, .ui-datepicker-next", function(e) {
+  e.stopPropagation(); // Prevent the click event from closing the datepicker
+});
 
-  // Show datepicker when clicking on the calendar opener
-  $(".calen-op-cl").click(function () {
-    $(".ui-datepicker").slideToggle();
-  });
+// Show datepicker when clicking on the calendar opener
+$(".calen-op-cl").click(function() {
+  $(".ui-datepicker").slideToggle();
+});
 
-  // Close datepicker when clicking outside
-  $(document).click(function (e) {
-    if (
-      !$(e.target).closest(".ui-datepicker").length &&
-      !$(e.target).closest(".calen-op-cl").length
-    ) {
+// Close datepicker when clicking outside
+$(document).click(function(e) {
+  if (!$(e.target).closest(".ui-datepicker").length &&
+      !$(e.target).closest(".calen-op-cl").length) {
       $(".ui-datepicker").slideUp();
-    }
-  });
+  }
+});
 
-  // Hide datepicker initially
-  $(".ui-datepicker").hide();
+// Hide datepicker initially
+$(".ui-datepicker").hide();
+
+
 
   // *   Show enteries on page
   // Function to update table based on selected number of entries
   function updateTable() {
     var entriesToShow = parseInt($("#enteries").val());
-    var $tableRows = $(".table-body tr");
+    var $tableRows = $(".modal-body .table-body tr");
 
     $tableRows.hide(); // Hide all rows
     $tableRows.slice(0, entriesToShow).show(); // Show only selected number of rows
@@ -281,7 +325,7 @@ $(document).ready(function () {
   function updateTable() {
     // Function to update table based on selected number of entries
     var entriesToShow = parseInt($("#enteries").val());
-    var $tableRows = $(".table-body tr");
+    var $tableRows = $(".modal-body .table-body tr");
 
     $tableRows.hide(); // Hide all rows
     $tableRows.slice(0, entriesToShow).show(); // Show only selected number of rows
@@ -400,15 +444,20 @@ $(document).ready(function () {
     $("#" + target).show();
   });
 
+
+
+
+
+
   //* Below 992PX operator, circle, amount POPUP
-  $("#operator").on("click", function () {
+  $("#operator, #change-op-btn").on("click", function () {
     // Check if screen width is below 992px
     if ($(window).width() < 992) {
       // Show the offcanvas modal
       $("#operator-offcanvas").offcanvas("show");
     }
   });
-  $("#circle").on("click", function () {
+  $("#circle, #change-cir-btn").on("click", function () {
     // Check if screen width is below 992px
     if ($(window).width() < 992) {
       // Show the offcanvas modal
@@ -449,7 +498,6 @@ $(document).ready(function () {
 
   // HIDE BILLING DETAIL
   // Hide the billing-next-button initially
-  $(".billing-close-button").hide();
 
   // Show the billing-next-button when clicked
   $(".billing-next-button").on("click", function () {
@@ -464,9 +512,49 @@ $(document).ready(function () {
     $(".billing-detail-popup .modal-header-bill").hide();
   });
 
-
   // TO HIDE THE RECENT HISTORY BUTTON
-  $('.next-btn').click(function(){
-    $('.recent-payment-tab').hide();
-});
+  $(".next-btn").click(function () {
+    $(".recent-payment-tab").hide();
+  });
+
+  // CHANGING THE TAB COLOR  ON CLICK OF NEXT AND PRE
+  $(".inner-main-tab").click(function () {
+    $(".inner-main-tab a").removeClass("active-table-tab");
+    $(this).find("a").addClass("active-table-tab");
+  });
+
+  // TO SHOW DATA TABLES
+  // Hide all tab-pane-inner divs except for the one corresponding to the active tab
+  $(".tab-pane-inner").hide();
+  $(".active-table-tab").each(function () {
+    var targetId = $(this).data("target");
+    $("#" + targetId).show();
+  });
+
+  $(".inner-main-tab a").click(function () {
+    // Hide all tab-pane-inner divs
+    $(".tab-pane-inner").hide();
+
+    // Get the target tab-pane-inner id from data-target attribute
+    var targetId = $(this).data("target");
+
+    // Show the target tab-pane-inner div
+    $("#" + targetId).show();
+  });
+
+  // SHOW/HIDE change operator
+  $(".op-box").click(function () {
+    // Hide all 'Change' buttons
+    $("#change-op-btn").hide();
+    // Show only the 'Change Operator' button
+    $("#change-op-btn").show();
+  });
+
+  $(".location-box").click(function () {
+    // Hide all 'Change' buttons
+    $("#change-cir-btn").hide();
+    // Show only the 'Change Circle' button
+    $("#change-cir-btn").show();
+  });
+
 });
