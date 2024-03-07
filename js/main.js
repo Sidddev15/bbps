@@ -9,8 +9,25 @@ $(document).ready(function () {
     }
   });
 
+  $(".next-btn").click(function() {
+    $("#content-0").hide(); // Hide the div with id "content-0"
+  });
+
   // ----------------
 
+    // Function to close tab-dropdown when clicking outside
+  // Function to close tab-dropdown when clicking outside
+  $(document).click(function(event) {
+    var target = $(event.target);
+    // Check if the clicked element is not within the tab-dropdown and not the #proiority-queue element
+    if (!target.closest('.tab-dropdown').length && !target.closest('#proiority-queue').length) {
+      $('.tab-dropdown').slideUp();
+    }
+  });
+
+  
+
+  // ---------------
   // Increase the height after third click 
   // Initialize click counter
   var clickCount = 0;
@@ -70,11 +87,18 @@ $(document).ready(function () {
   // Show first field initially
   $(".sf-1:first").show(); // Show the first element with class "sf-1"
 
-  // Function to show next field and hide current field
-  function showNextField(currentField, nextField) {
+// Function to show next field and hide current field
+function showNextField(currentField, nextField) {
+  // Check if all fields are already visible
+  if ($(".sf-1:visible").length && $(".sf-2:visible").length && $(".sf-3:visible").length) {
+    // If all fields are visible, don't hide the current field
+    $(nextField).show();
+  } else {
+    // If not all fields are visible, hide the current field
     $(currentField).hide();
     $(nextField).show();
   }
+}
 
   // Function to handle "Next" button click
   $(".next-btn").click(function () {
@@ -288,7 +312,13 @@ $(document).on("click", ".ui-datepicker-prev, .ui-datepicker-next", function(e) 
 
 // Show datepicker when clicking on the calendar opener
 $(".calen-op-cl").click(function() {
-  $(".ui-datepicker").slideToggle();
+  $(".ui-datepicker").slideDown();
+});
+
+// Toggle active class on clicking datepicker days
+$(document).on("click", ".ui-state-default", function() {
+  $(".ui-state-default").removeClass("active"); // Remove active class from all datepicker days
+  $(this).addClass("active"); // Add active class to the clicked datepicker day
 });
 
 // Close datepicker when clicking outside
@@ -407,7 +437,7 @@ $(".ui-datepicker").hide();
     $(".billing-content-2").show();
 
     // Increase the height of modal content
-    $(".billing-detail-popup .modal-content").css("height", "855px");
+    $(".billing-detail-popup .modal-content").css("height", "845px");
   });
 
   // HANDLE TAB
@@ -443,10 +473,6 @@ $(".ui-datepicker").hide();
     // Show the corresponding tab content
     $("#" + target).show();
   });
-
-
-
-
 
 
   //* Below 992PX operator, circle, amount POPUP
@@ -498,7 +524,9 @@ $(".ui-datepicker").hide();
 
   // HIDE BILLING DETAIL
   // Hide the billing-next-button initially
-
+  if ($(window).width() < 992) {
+    $(".billing-close-button").hide();
+  }
   // Show the billing-next-button when clicked
   $(".billing-next-button").on("click", function () {
     $(".billing-close-button").show();
@@ -556,5 +584,15 @@ $(".ui-datepicker").hide();
     // Show only the 'Change Circle' button
     $("#change-cir-btn").show();
   });
+
+  // Function to reset the scroll position of location-container to the top
+function resetLocationContainerScroll() {
+  $(".location-container").scrollTop(0);
+}
+
+// Event listener for offcanvas open event
+$('#circle-offcanvas').on('shown.bs.offcanvas', function () {
+  resetLocationContainerScroll();
+});
 
 });

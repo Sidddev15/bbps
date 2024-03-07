@@ -1,36 +1,55 @@
 /** Desktop */
 @media (min-width:1900px) {
-  .inner-section-three .col-lg-8 {
-    min-width: 71%;
-  }
+  .inner-section-three .col-lg-8 { min-width: 71%; }
+}
+@media (max-width:1700px) {
+  .desktop-popup .modal-form input { min-width: 90%; }
+}
+@media (max-width:1400px) {
+  .content-0 {height: 327px;}
+  .price { display: none; }
+  .desktop-popup .table-responsive {max-height: 260px;}
+  .desktop-popup .ui-datepicker {
+    height: 250px;
+}
+.desktop-popup .ui-datepicker-calendar tbody tr td a {
+  margin: -1px 13px;
+}
 }
 @media (min-width:1218px) and (max-width:1300px) {
-  .popup-container .modal-form input {
-    min-width: 481px;
+  .popup-container .modal-form input { min-width: 481px; }
+  .desktop-popup .modal-form input { min-width: 90%; }
 }
-}
-@media (min-width:1056px) and (max-width:1218px) {
-  .popup-container .modal-form input {
-    min-width: 391px;
-}
+@media (min-width:992px) and (max-width:1218px) {
+  .popup-container .modal-form input { min-width: 391px; }
+  .desktop-popup .modal-form input { min-width: 90%; }
+  .popup-container .table-body td:first-child { font-size: 13px; }
+  .content-0 h5 { font-size: 18px; }
+  .desktop-popup .status p { font-size: 13px; }
+  .desktop-popup .status-p p { font-size: 13px; }
+  .desktop-popup .status-s p { font-size: 13px; }
+  .desktop-popup .details p { font-size: 13px; }
+  .desktop-popup .details { max-width: 90px; max-height: 28px; }
+  .desktop-popup .table-body td:first-child { padding: 21px 0px 21px 10px; }
+  .p-table { padding: 11px 10px; }
+  .desktop-popup .ph-detail p { max-width: 270px; }
+  .desktop-popup .table-body td { margin-top: 30px; }
 }
 @media (min-width:992px) and (max-width:1056px) {
-  .popup-container .modal-form input {
-    min-width: 251px;
-}
+  .popup-container .modal-form input { min-width: 251px; }
+  .desktop-popup .modal-form input { min-width: 90%; }
+  .popup-container .table-body td:first-child { font-size: 12px; }
+  .content-0 h5 { font-size: 16px; }
+  .p-table { padding: 11px 10px; }
 }
 @media (min-width:993px) and (max-width:1400px) {
   .nav-tab-main { max-height: 55px; }
   .navbar-container { height: 110px; }
   .form-container { height: 327px; }
   #content-1,#content-2 { height: 327px; }
-  .inner-section-two {
-    height: 568px;
-}
+  .inner-section-two { height: 568px; }
   .nav-tab-main p { font-size: 14px; line-height: 15px; }
-  .inner-section-three {
-    top: 330px;
-}
+  .inner-section-three { top: 330px; }
   .location-container,.operator-container { height: 213px; }
   .tab-image-container { width: 32px; height: 32px; }
   .inner-section-three form h5 { font-size: 16px; }
@@ -68,8 +87,9 @@
 }
 /** Tablet and Mobile */
 @media (min-width:320px) and (max-width:992px) {
-  .popup-container .modal-form input {min-width: 100%;}
-  .modal-form {justify-content: end;}
+  .billing-detail-popup .continuation-button .billing-close-button a { color: #F86403; font-family: var(--primary-font); font-size: 18px; font-style: normal; font-weight: 700; line-height: 17px; }
+  .popup-container .modal-form input { min-width: 100%; }
+  .modal-form { justify-content: end; }
   .navbar-container { max-width: 97%; overflow-x: auto; top: -255px; justify-content: space-between; width: 100%; height: 100px; }
   .nav-tab-main { margin-top: 15px; }
   .inner-section-three .col-lg-4 { max-width: 100%; }
@@ -78,13 +98,13 @@
   .nav-tab-main { min-width: 140px; }
   .inner-section-two { height: 619px; }
   .inner-section-two::before { height: 280px; }
-  .inner-section-three {
-    top: 323px;
-}
+  .inner-section-three { top: 323px; }
+  .below-992 { display: block; }
+  .above-992 { display: none; }
   .plan-box-content { max-width: 586px; }
   .plan-box-content h6 { margin-top: 18px; }
   .location-container { max-height: 363px; }
-  .amount .offcanvas { height: 831px !important; }
+  .offcanvas-am-h { height: 771px !important; }
   .plan-container { max-height: 662px; }
   .nav-tab-main { margin-bottom: 0; }
   .billing-detail-popup .modal-dialog { max-width: 100% !important; position: absolute; bottom: 0; width: 100%; margin: 0; }
@@ -92,7 +112,7 @@
   .billing-detail-popup .payment-container table tbody tr td:first-child { width: 50%; }
   .billing-detail-popup .continuation-button .billing-content-1 .billing-close-button { display: none; }
   .billing-detail-popup .modal-body { padding: 0; }
-  .billing-detail-popup .modal-content { height: 511px; }
+  .billing-detail-popup .modal-content { height: 511px; top: 133px; }
   .billing-detail-popup .modal-body h1 { padding: 21px 31px; }
   .billing-detail-popup .continuation-button .billing-content-1 .billing-next-button { max-width: 100%; border-radius: 0; position: fixed; bottom: 0; left: 0; margin: 0; }
   .billing-detail-popup .modal-body h1 { border-bottom: 0.6px solid #E6E5EB; }
@@ -126,24 +146,32 @@
   .inner-section-three { margin: 0 40px; }
   .topbar-info-container { padding: 18px; }
   .disclaimer { background: #FFF; box-shadow: 0px -5px 7px 0px rgba(0,0,0,0.05); padding: 12px 10px; position: fixed; bottom: 0; width: 100%; }
+  .reciept-detail-container h6 { margin-bottom: 0; }
+  .billing-detail-popup .continuation-button .billing-next-button a { color: #fff; }
+  .popup-container .status-p p { color: #F09300; text-align: center; font-family: var(--primary-font); font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; letter-spacing: 0.14px; }
+  .popup-container .status-s p { color: #28AE62; text-align: center; font-family: var(--primary-font); font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; letter-spacing: 0.14px; }
+  .popup-container .table-body td:first-child { padding: 21px 0px 21px 56px; }
 }
 @media (min-width:320px) and (max-width:767px) {
-  
-  .recent-tool-container {width: 80%;}
+  .plan-box-content h6:last-child {padding-bottom: 50px;}
+  .billing-detail-popup .continuation-button .billing-next-button a { color: #fff; }
+  .popup-container .table-body td:first-child { padding: 21px 0px 21px 56px; }
+  .below-992 { display: block; }
+  .above-992 { display: none; }
+  .recent-tool-container { width: 50%; }
   .navbar-container { height: 90px; padding: 0 10px; column-gap: 10px; }
   .inner-section-two { margin: 0; background: transparent; border: none; }
   .inner-section-three { margin: 0 10px; top: 220px; }
-  .form-container { padding: 10px; }
+  .form-container { padding: 10px; margin-bottom: 0px; }
   .inner-section-two::before { background: transparent; }
   .topbar-info-container { display: none; }
   .content-tab-1 .operator-container .op-box { max-width: 50%; height: 160px; }
-  .location-container { flex-wrap: nowrap; flex-direction: column; padding: 10px; max-height: 423px; }
+  .location-container { flex-wrap: nowrap; flex-direction: column; padding: 10px; max-height: 663px; }
   .location-box { max-width: 100%; width: 100%; border: none; border-bottom: 1px solid rgba(36,39,44,0.20); }
   .plan-box-main { padding: 14px 10px; align-items: start; }
   .plan-box-content h5 { font-size: 14px; padding-bottom: 10px; }
   .plan-box-content h5 span { font-size: 14px; }
   .plan-box-button { padding-left: 20px; }
-  .amount .offcanvas { height: 721px !important; }
   .tab-container ul { padding: 15px 10px; }
   .billing-detail-popup .modal-body .detail-container { margin: 0 10px; }
   .billing-detail-popup .payment-container { margin: 0 10px 33px; }
@@ -156,16 +184,11 @@
   .billing-content-2 .bill-detail-container { margin: 15px 10px; }
   .billing-content-2 .bill-detail-container table tbody tr td { font-size: 13px; }
   .billing-content-2 .bill-detail-container table tbody tr td:last-child { font-size: 13px; }
-  .billing-detail-popup .modal-content { height: 765px !important; }
+  .billing-detail-popup .modal-content { height: 725px !important; top: 268px; }
   .search-bar-container .modal-form button { display: none; }
   .search-bar-container .modal-form input { border-radius: 220px; width: 100%; }
-  .popup-container .search-bar-container {     display: flex;
-    column-gap: 20px;
-    flex-direction: column-reverse;
-    align-items: end;
-    width: 100%;
-  }
-  .modal-form {width: 100%;}
+  .popup-container .search-bar-container { display: flex; column-gap: 20px; flex-direction: column-reverse; align-items: end; width: 100%; }
+  .modal-form { width: 100%; }
   .offcanvas .offcanvas-header h5 { padding: 0; font-size: 16px; }
   .popup-container .d-flex-modal { column-gap: 10px; }
   .offcanvas-header { align-items: baseline; }
@@ -174,7 +197,12 @@
   .popup-container .table-body td:first-child { padding: 21px 10px; }
   .price { padding-right: 10px; }
   .navbar-container { max-width: 99%; border-radius: 20px 0 0 20px; }
-  .inner-section-two { height: 200px !important; }
+  .inner-section-two { height: 630px !important; }
+  .billing-content-2 .bill-detail-container { padding: 17px 6px; }
+  .offcanvas { height: 735px !important; }
+  .offcanvas-op-h { height: 535px !important; }
+  .offcanvas-am-h { height: 811px !important; }
+  .operator-container { max-height: 483px; }
 }
 /** For small screens */
 @media (max-width:992px) {
@@ -183,16 +211,28 @@
   .tab-container ul::-webkit-scrollbar-thumb { background: transparent; }
   .tab-container ul::-webkit-scrollbar-track { background-color: transparent; }
 }
+@media (max-width:600px) {
+  .popup-container .modal-form input { min-width: 480px; }
+}
+@media(max-width:767px) {
+  .popup-container .modal-form input { min-width: 600px; }
+}
+@media (max-width:600px) {
+  .popup-container .modal-form input { min-width: 450px; }
+}
 @media(max-width:500px) {
   .popup-container .ui-datepicker { right: 0; height: 286px; }
   .popup-container .ui-datepicker-header { margin-top: 15px; }
   .popup-container .ui-datepicker-calendar tbody tr td a { margin: 0; }
   .navbar-container { max-width: 98%; border-radius: 20px 0 0 20px; }
   .inner-section-three form h5 { max-width: 200px; }
+  .popup-container .modal-form input { min-width: 380px; }
 }
 @media (max-width:400px) {
   .search-bar-container .modal-form input { margin-left: -240px; padding-left: 10px; }
+  .search-bar-container .modal-form input { min-width: 330px; }
 }
 @media (max-width:350px) {
   .plan-box-content { max-width: 166px; }
+  .search-bar-container .modal-form input { min-width: 293px; }
 }

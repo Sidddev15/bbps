@@ -45,7 +45,7 @@
 }
 
 .form-container-1 {
-  height: 560px !important;
+  height:430px !important;
 }
 
 .radio-container {
@@ -343,6 +343,108 @@
 }
 
 /*  side item */
+.content-0 {
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: #FFF;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.05);
+  height: 393px;
+  position: relative;
+}
+
+.desktop-popup .recent-payment-table {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+.desktop-popup .table-responsive {
+  max-width: 100%;
+  overflow-x: auto;
+  max-height: 330px;
+  overflow-y: auto;
+}
+
+.desktop-popup .table-body tr {
+  border: none;
+  border-bottom: 0.5px solid #E0E1E0 !important;
+}
+.desktop-popup .table-body tr:last-child {
+  border-bottom: none !important;
+}
+.desktop-popup .table-body td {
+  margin-top: 20px;
+}
+.desktop-popup .table-body td:first-child {
+  padding: 21px 0px 21px 30px;
+}
+.desktop-popup .modal-form input {
+  max-height: 40px;
+}
+.desktop-popup .image-modal-size {
+  width: 36px;
+  height: 30px;
+}
+.desktop-popup .modal-form button {
+  height: 40px;
+  width: 54px;
+}
+
+.desktop-popup .status p {
+  color: #E20909;
+border: none;
+background: none;
+text-align: center;
+font-family: var(--primary-font);
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 0.14px;
+}
+.desktop-popup .status-s p {
+  color: #28AE62;
+  border: none;
+  background: none;
+  text-align: center;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+.desktop-popup .status-p p {
+  color: #F09300;
+
+  text-align: center;
+  font-family: var(--primary-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.14px;
+}
+
+.desktop-popup .ui-datepicker {
+  height: 280px;
+}
+.desktop-popup .ui-datepicker-calendar tbody tr td a {
+  margin: 1.5px 13px;
+}
+
+.desktop-popup .ui-datepicker {
+  top: 65px;
+}
+.content-0 h5 {
+  color: #25233C;
+
+font-family: var(--primary-font);
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
 .content-1 {
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.07);
@@ -527,7 +629,7 @@
   display: flex;
   column-gap: 28px;
   background: rgba(252, 174, 51, 0.10);
-  padding: 15px 38px;
+  padding: 15px 20px;
   max-width: 1920px;
   overflow-x: auto;
 }
@@ -580,11 +682,11 @@
 .plan-box-main {
   display: flex;
   align-items: center;
-  padding: 14px 40px;
+  padding: 14px 20px;
   justify-content: space-between;
   border-bottom: 1px solid #C2C5CC;
 }
-
+.pb-30 {padding-bottom: 55px;}
 .plan-box-content {
   max-width: 845px;
 }
@@ -658,9 +760,9 @@
   height: 38px;
   transition: all 0.4s ease;
 }
-
 .plan-box-button button:hover {
   background: hsl(0, 0%, 97%);
+  border: 1.1px solid #F86403;
 }
 
 .plan-box-button button p {
@@ -779,8 +881,22 @@
   outline: none;
 }
 
-.billing-detail-popup .continuation-button .billing-close-button {
-  color: rgba(150, 153, 158, 0.30);
+.billing-detail-popup .continuation-button .billing-close-button-link {
+  color: #96999E;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background: none;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  width: 100%;
+  text-decoration: none;
+}
+.billing-detail-popup .continuation-button .billing-close-button-link .billing-close-button{
+  color: #96999E;
   border: none;
   background: none;
   font-family: var(--primary-font);
@@ -789,8 +905,27 @@
   font-weight: 600;
   line-height: 16px;
 }
-.billing-detail-popup .continuation-button .billing-close-button a {
+.billing-detail-popup .continuation-button .billing-next-button-link {
   color: rgba(150, 153, 158, 0.30);
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  text-decoration: none;
+  width: 100%;
+}
+.billing-detail-popup .continuation-button .billing-next-button-link .billing-next-button {
+  color: #fff;
+  font-family: var(--primary-font);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  text-decoration: none;
+}
+.billing-detail-popup .continuation-button .billing-next-button-link  {
+  color: #fff;
   font-family: var(--primary-font);
   font-size: 18px;
   font-style: normal;
@@ -1053,7 +1188,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  padding: 0px 29px;
+  padding: 0px 2px;
 }
 
 .content-tab-1 .operator-container .op-box {
@@ -1091,4 +1226,9 @@
 }
 .billing-detail-popup .billing-content-2 .bill-detail-conttainer table thead th:nth-child(2) {
   text-align: center;
+}
+.service-list li:last-child {border: none;}
+
+.bill-detail-container table tbody tr td:first-child {
+  width: 49%;
 }
