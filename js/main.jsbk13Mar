@@ -109,46 +109,39 @@ $(document).ready(function () {
   // Function to handle "Next" button click
 
   $("#content-1, #content-2, #content-3").hide();
-  var paymentProceeded = false;
+  var paymentProceeded = false; 
   $(".next-btn").click(function () {
     if ($(".sf-1:visible").length) {
       // Show field 2
       showNextField(".sf-1", ".sf-2");
-      $("#content-1").css("display", "block");
+      $("#content-1").css("display", "block").animate({ right: "0" }, 200);
       $("#change-op-btn").click(function () {
         // Toggle visibility and opacity of content-1 div
-        $(".content-1").hide();
         $("#content-1").fadeToggle(500);
-        //$("#content-3").fadeToggle(500);
+        $("#content-3").fadeToggle(500);
       });
     } else if ($(".sf-2:visible").length) {
       // Show field 3
       showNextField(".sf-2", ".sf-3");
-      $("#content-1").css("display", "none");
-      $("#content-2").css("display", "block");
-      // $("#circle").click(function () {
-      //   // Toggle visibility and opacity of content-1 div
-      //   $("#content-2").fadeToggle(500);
-      //   $("#content-3").fadeToggle(500);
-      // });
-    } else if ($(".sf-3:visible").length) {
-      // Check if #amount is empty and disable the button
-      if ($("#amount").val() === "") {
-        $(".next-btn").prop("disabled", true);
-      } else {
-        $(".next-btn").prop("disabled", false);
-      }
+      $("#content-1").css("display", "none").animate({ right: "0" }, 200);
+      $("#content-2").css("display", "block").animate({ right: "0" }, 200);
+      $("#circle").click(function () {
+        // Toggle visibility and opacity of content-1 div
+        $("#content-2").fadeToggle(500);
+        $("#content-3").fadeToggle(500);
+      });
 
+    } else if ($(".sf-3:visible").length) {
       // Show field 4 and update container height
-      $(".form-container").css("height", "600px");
+      $(".form-container").css("height", "560px");
       $(".next-btn").text("Proceed To Payment");
       $(".next-btn").attr({
         "data-bs-toggle": "modal",
         "data-bs-target": "#billingmodal",
       });
-      $("#content-1").hide();
       showNextField(".sf-3", ".sf-4");
-      $("#content-1,#content-2, #content-3").hide();
+      $("#content-1").hide();
+      $("#content-2").css("display", "none").animate({ right: "0" }, 200);
       $("#content-3").css("display", "block").animate({ right: "0" }, 200);
       // Show all fields when field 4 is shown
       $(".sf-1").show();
@@ -157,10 +150,12 @@ $(document).ready(function () {
       $(".sf-4").show();
 
       paymentProceeded = true;
-    } else if (paymentProceeded) {
+    }else if (paymentProceeded) {
       // If payment has been proceeded, prevent showing content-1
       return;
-    }
+  }
+
+    
   });
 
   // * DISABLE THE BUTTON IN INPUT FIELD NOT FILLED
@@ -170,29 +165,52 @@ $(document).ready(function () {
   // Event listener for input field changes
   // Event listener for input field changes
   $(".field1 input[type='text']").on("input", function () {
-    var inputLength = $(this).val().trim().length;
-
-    var inputAtr = $(this).attr("id");
-
-    // Find closest .field1 parent and then find .error-message within it
-    var errorMessage = $(this).closest(".field1").find(".error-message");
-
-    if (inputAtr == "mobile" && inputLength < 10) {
-      $(".next-btn").prop("disabled", true); // Enable next button
-      errorMessage.css("display", "block"); // Hide specific error message
-    } else if (inputLength < 1) {
+    // Check if input length is less than 10
+    if ($(this).val().trim().length < 10) {
       $(".next-btn").prop("disabled", true); // Disable next button
-      errorMessage.css("display", "block"); // Show specific error message
+      $(".error-message").css("display", "block"); // Show error message
     } else {
       $(".next-btn").prop("disabled", false); // Enable next button
-      errorMessage.css("display", "none"); // Hide specific error message
+      $(".error-message").css("display", "none"); // Hide error message
     }
   });
+
+  //* TO UPDATE FIELD 2 AND FIELD 3 ON CLICK OF SLIDE MENU
+  // // 1
+  // $("#change-op-btn").on("click", function () {
+  //   hideAllContent();
+  //   $("#content-1").css("display", "block").animate({ right: "0" }, 200);
+  // });
+  // $(".next-btn").on("click", function () {
+  //   $("#content-1").fadeOut(200).animate({ right: "-140px" }, 200);
+  // });
+  // // 2
+  // $(" #change-cir-btn").on("click", function () {
+  //   hideAllContent();
+  //   $("#content-2").css("display", "block").animate({ right: "0" }, 200);
+  // });
+  // $(".next-btn").on("click", function () {
+  //   $("#content-2").fadeOut(200).animate({ right: "-140px" }, 200);
+  // });
+  // // 3
+  // $("#amount").on("click", function () {
+  //   hideAllContent();
+  //   $("#content-3").css("display", "block").animate({ right: "0" }, 200);
+  // });
+  // $(".next-btn").on("click", function () {
+  //   $("#content-3").fadeOut(200).animate({ right: "-140px" }, 200);
+  // });
+  // // Function to hide all content sections
+  // function hideAllContent() {
+  //   $("#content-1, #content-2, #content-3")
+  //     .fadeOut(200)
+  //     .animate({ right: "-140px" }, 200);
+  // }
 
   //* UPDATING THE CONTENT ON FIELD
   // ! THIS
   // 1
-  $("#content-1 .op-box").on("click", function () {
+  $(".op-box").on("click", function () {
     $("#field2 label").addClass("label-up");
 
     var opImgSrc = $(this).find(".op-img img").attr("src");
@@ -206,7 +224,7 @@ $(document).ready(function () {
   });
 
   // 2
-  $("#content-2 .location-box").on("click", function () {
+  $(".location-box").on("click", function () {
     $("#field3 label").addClass("label-up");
 
     var locImgSrc = $(this).find(".location-img img").attr("src");
@@ -218,19 +236,6 @@ $(document).ready(function () {
     // Set the src attribute of the circle image tag to the image source
     $("#circle-img").attr("src", locImgSrc);
   });
-
-  function checkAmountValue() {
-    if ($("#amount").val() === "") {
-      $(".next-btn").prop("disabled", true);
-    } else {
-      $(".next-btn").prop("disabled", false);
-    }
-  }
-
-  $("#amount").on("blur", function () {
-    checkAmountValue();
-  });
-
   // 3
   $(".plan-box-button button").on("click", function () {
     // Add label-up class to the label of #field4
@@ -241,99 +246,58 @@ $(document).ready(function () {
 
     // Set the value of the input field to the button text
     $("#amount").val(buttonText);
-    checkAmountValue();
-  });
-
-  // OFFCANVAS
-
-  // Event listener for operator option click within the offcanvas
-  $("#operator-offcanvas .op-box").on("click", function () {
-    // Get the location image source and text
-    var locImgSrc = $(this).find(".op-img img").attr("src");
-    var locText = $(this).find(".op-text span").text();
-
-    // Set the value of the input field to the text
-    $("#operator").val(locText);
-
-    // Set the src attribute of the circle image tag to the image source
-    $("#operator-img").attr("src", locImgSrc);
-
-    // Add the label-up class to the label associated with the circle input field
-    $("#field2 label").addClass("label-up");
-
-    // Close the offcanvas after a circle is selected
-    $("#operator-offcanvas").offcanvas("hide");
-  });
-
-  // Event listener for location option click within the offcanvas
-  $("#circle-offcanvas .location-box").on("click", function () {
-    // Get the location image source and text
-    var locImgSrc = $(this).find(".location-img img").attr("src");
-    var locText = $(this).find(".location-text span").text();
-
-    // Set the value of the input field to the text
-    $("#circle").val(locText);
-
-    // Set the src attribute of the circle image tag to the image source
-    $("#circle-img").attr("src", locImgSrc);
-
-    // Add the label-up class to the label associated with the circle input field
-    $("#field3 label").addClass("label-up");
-
-    // Close the offcanvas after a circle is selected
-    $("#circle-offcanvas").offcanvas("hide");
   });
 
   // NAVBAR WIDTH ADJUSTMENT
-  // function adjustElements() {
-  //   var screenWidth = $(window).width();
-  //   // Show all tabs if screen size is above 1800
-  //   if (screenWidth > 1800) {
-  //     $(".nav-tab-main").css("display", "flex");
-  //   } else {
-  //     // Hide tabs one by one as screen size decreases
-  //     if (screenWidth <= 1800) {
-  //       $(".h9").css("display", "none");
-  //     } else {
-  //       $(".h9").css("display", "flex");
-  //     }
-  //     if (screenWidth <= 1648) {
-  //       $(".h8").css("display", "none");
-  //     } else {
-  //       $(".h8").css("display", "flex");
-  //     }
-  //     if (screenWidth <= 1475) {
-  //       $(".h7").css("display", "none");
-  //     } else {
-  //       $(".h7").css("display", "flex");
-  //     }
-  //     if (screenWidth <= 1315) {
-  //       $(".h6").css("display", "none");
-  //     } else {
-  //       $(".h6").css("display", "flex");
-  //     }
-  //     if (screenWidth <= 1155) {
-  //       $(".h5").css("display", "none");
-  //     } else {
-  //       $(".h5").css("display", "flex");
-  //     }
-  //     if (screenWidth <= 995) {
-  //       $(".h4").css("display", "none");
-  //     } else {
-  //       $(".h4").css("display", "flex");
-  //     }
-  //     if (screenWidth <= 992) {
-  //       $(".nav-tab-main").not(".h10").css("display", "flex");
-  //       $(".h10").css("display", "none");
-  //     }
-  //   }
-  // }
+  function adjustElements() {
+    var screenWidth = $(window).width();
+    // Show all tabs if screen size is above 1800
+    if (screenWidth > 1800) {
+      $(".nav-tab-main").css("display", "flex");
+    } else {
+      // Hide tabs one by one as screen size decreases
+      if (screenWidth <= 1800) {
+        $(".h9").css("display", "none");
+      } else {
+        $(".h9").css("display", "flex");
+      }
+      if (screenWidth <= 1648) {
+        $(".h8").css("display", "none");
+      } else {
+        $(".h8").css("display", "flex");
+      }
+      if (screenWidth <= 1475) {
+        $(".h7").css("display", "none");
+      } else {
+        $(".h7").css("display", "flex");
+      }
+      if (screenWidth <= 1315) {
+        $(".h6").css("display", "none");
+      } else {
+        $(".h6").css("display", "flex");
+      }
+      if (screenWidth <= 1155) {
+        $(".h5").css("display", "none");
+      } else {
+        $(".h5").css("display", "flex");
+      }
+      if (screenWidth <= 995) {
+        $(".h4").css("display", "none");
+      } else {
+        $(".h4").css("display", "flex");
+      }
+      if (screenWidth <= 992) {
+        $(".nav-tab-main").not(".h10").css("display", "flex");
+        $(".h10").css("display", "none");
+      }
+    }
+  }
 
-  // // Call the adjustment function on document ready, window resize, and scroll
-  // adjustElements();
-  // $(window).on("resize scroll", function () {
-  //   adjustElements();
-  // });
+  // Call the adjustment function on document ready, window resize, and scroll
+  adjustElements();
+  $(window).on("resize scroll", function () {
+    adjustElements();
+  });
   $(function () {
     $('input[name="dates"]').daterangepicker(
       {
@@ -558,7 +522,7 @@ $(document).ready(function () {
 
   // IMAGE SHOW/HIDE OFFCANVAS CLICK
   // 1
-  $("#content-1 .op-box").on("click", function () {
+  $(".op-box").on("click", function () {
     // Show the image inside .field1
     $(".field1 img").css("display", "block");
 
@@ -566,7 +530,7 @@ $(document).ready(function () {
     var opImgSrc = $(this).find(".op-img img").attr("src");
 
     // Set the src attribute of the image inside .field1 to opImgSrc
-    $("#content-1 .field1 img").attr("src", opImgSrc);
+    $(".field1 img").attr("src", opImgSrc);
   });
   // 2
   $(".location-box").on("click", function () {
@@ -589,14 +553,14 @@ $(document).ready(function () {
   $(".billing-next-button").on("click", function () {
     $(".billing-close-button").show();
   });
-  // // Add click event listener to .billing-next-button
-  // $(".billing-next-button").on("click", function () {
-  //   // Hide the billing-next-button
-  //   $(this).hide();
+  // Add click event listener to .billing-next-button
+  $(".billing-next-button").on("click", function () {
+    // Hide the billing-next-button
+    $(this).hide();
 
-  //   // Hide the .modal-header-bill element
-  //   $(".billing-detail-popup .modal-header-bill").hide();
-  // });
+    // Hide the .modal-header-bill element
+    $(".billing-detail-popup .modal-header-bill").hide();
+  });
 
   // TO HIDE THE RECENT HISTORY BUTTON
   $(".next-btn").click(function () {
@@ -652,65 +616,26 @@ $(document).ready(function () {
   $("#circle-offcanvas").on("shown.bs.offcanvas", function () {
     resetLocationContainerScroll();
   });
-  // ------------
-  // Function to reset the scroll position of the location container
-  function resetLocationContainerScroll() {
-    $(".service-list").scrollTop(0);
-  }
-
-  // Event listener for offcanvas open event
-  $(".tab-dropdown").on("click", function () {
-    resetLocationContainerScroll();
-  });
-
-  // Function to reset the scroll position on page load
-  $(document).ready(function () {
-    resetLocationContainerScroll();
-  });
-
-  // Logic to scroll to the top of the page before unloading
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
 
   // CHANGE CIRCLE
   $("#change-cir-btn").click(function () {
     // Toggle visibility and opacity of content-1 div
-    $(".content-1").hide();
     $("#content-2").fadeToggle(500);
-    //$("#content-3").fadeToggle(500);
+    $("#content-3").fadeToggle(500);
   });
 
   // CHANGE OPERATOR
 
+
   $("#amount").click(function () {
     // Toggle visibility and opacity of content-1 div
-    $(".content-1").hide();
     $("#content-3").fadeToggle(500);
   });
 
-  $("#validateForm").click(function () {
-    // Toggle visibility and opacity of content-1 div
-
-    var amountVal = $("#amount").val();
-    if (amountVal) {
-      $(".content-1").hide();
-      $("#content-3").fadeToggle(500);
-    }
-  });
 
   $("#operator").click(function () {
-    $("#content-1").fadeIn(500);
-    $("#content-2, #content-3").hide();
+    // Toggle visibility and opacity of content-1 div
+    $("#content-1").fadeToggle(500);
+    $("#content-3").fadeToggle(500);
   });
-
-  $("#circle").click(function () {
-    $("#content-2").fadeIn(500);
-    $("#content-1, #content-3").hide();
-  });
-
-  $("#amount").click(function () {
-    $("#content-3").fadeIn(500);
-    $("#content-1, #content-2").hide();
-  }); 
 });

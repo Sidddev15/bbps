@@ -33,5 +33,4 @@
   .topbar-info p { color: #23213A; text-align: center; font-family: var(--primary-font); font-size: 12px; font-style: normal; font-weight: 500; line-height: normal; }
   .topbar-info p a { color: #23213A; font-family: var(--primary-font); font-size: 12px; font-style: normal; font-weight: 500; line-height: normal; text-decoration-line: underline; }
   .service-sec-1:last-child {margin-bottom: 85px;}
-
 }

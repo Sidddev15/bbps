@@ -1,20 +1,51 @@
 /** Desktop */
+@media (min-width:1920px) {
+  .navbar-container { width: 97%; }
+}
 @media (min-width:1900px) {
   .inner-section-three .col-lg-8 { min-width: 71%; }
+}
+@media (min-width:1880px) {
+  .navbar-container { width: 96.5%; }
+}
+@media (max-width:1873px) {
+  .h9 { display: none; }
+}
+@media (max-width:1721px) {
+  .h8 { display: none; }
+}
+@media (max-width:1578px) {
+  .h7 { display: none; }
+}
+@media (max-width:1410px) {
+  .h6 { display: none; }
+}
+@media (max-width:1155px) {
+  .h5 { display: none; }
+}
+@media (max-width:995px) {
+  .h4 { display: none; }
+}
+@media (max-width:992px) {
+  .h10 { display: none; }
+  .h4,.h5,.h6,.h7,.h8,.h9 { display: flex; }
 }
 @media (max-width:1700px) {
   .desktop-popup .modal-form input { min-width: 90%; }
 }
+@media (max-width:1600px) {
+  .navbar-container { width: 95%; }
+}
+
+@media (min-width:991px) {
+  .field1 img {display: none;}
+}
 @media (max-width:1400px) {
-  .content-0 {height: 327px;}
-  .price { display: none; }
-  .desktop-popup .table-responsive {max-height: 260px;}
-  .desktop-popup .ui-datepicker {
-    height: 250px;
-}
-.desktop-popup .ui-datepicker-calendar tbody tr td a {
-  margin: -1px 13px;
-}
+  .content-0 { height: 327px; }
+  /* .price{display: none; }*/
+  .desktop-popup .table-responsive { max-height: 260px; }
+  .desktop-popup .ui-datepicker { height: 250px; }
+  .desktop-popup .ui-datepicker-calendar tbody tr td a { margin: -1px 13px; }
 }
 @media (min-width:1218px) and (max-width:1300px) {
   .popup-container .modal-form input { min-width: 481px; }
@@ -34,6 +65,10 @@
   .p-table { padding: 11px 10px; }
   .desktop-popup .ph-detail p { max-width: 270px; }
   .desktop-popup .table-body td { margin-top: 30px; }
+}
+@media (min-width:992px) and  (max-width:1366px) {
+  .operator-container { padding: 30px 40px; }
+  .location-container { padding: 30px 40px; }
 }
 @media (min-width:992px) and (max-width:1056px) {
   .popup-container .modal-form input { min-width: 251px; }
@@ -90,29 +125,30 @@
   .billing-detail-popup .continuation-button .billing-close-button a { color: #F86403; font-family: var(--primary-font); font-size: 18px; font-style: normal; font-weight: 700; line-height: 17px; }
   .popup-container .modal-form input { min-width: 100%; }
   .modal-form { justify-content: end; }
-  .navbar-container { max-width: 97%; overflow-x: auto; top: -255px; justify-content: space-between; width: 100%; height: 100px; }
-  .nav-tab-main { margin-top: 15px; }
+  .navbar-container { max-width: 100%; overflow-x: auto; top: -255px; justify-content: space-between; width: 100%; height: 100px; }
+  .nav-tab-main { margin-top: 0; }
   .inner-section-three .col-lg-4 { max-width: 100%; }
   .inner-section-three { margin: 0 100px; }
   .form-container { max-width: 100%; height: 320px; }
-  .nav-tab-main { min-width: 140px; }
+  .nav-tab-main { min-width: 170px; }
   .inner-section-two { height: 619px; }
   .inner-section-two::before { height: 280px; }
   .inner-section-three { top: 323px; }
   .below-992 { display: block; }
   .above-992 { display: none; }
+  .bbps-logo-m {display: none;}
   .plan-box-content { max-width: 586px; }
   .plan-box-content h6 { margin-top: 18px; }
   .location-container { max-height: 363px; }
-  .offcanvas-am-h { height: 771px !important; }
+  .offcanvas-am-h { height: 791px !important; }
   .plan-container { max-height: 662px; }
-  .nav-tab-main { margin-bottom: 0; }
-  .billing-detail-popup .modal-dialog { max-width: 100% !important; position: absolute; bottom: 0; width: 100%; margin: 0; }
+  .nav-tab-main { margin-bottom: -17px; }
+  .billing-detail-popup .modal-dialog { max-width: 100% !important; position: absolute; bottom: -110px; width: 100%; margin: 0; }
   .billing-detail-popup .modal-content { max-width: 100%; padding: 0; }
   .billing-detail-popup .payment-container table tbody tr td:first-child { width: 50%; }
   .billing-detail-popup .continuation-button .billing-content-1 .billing-close-button { display: none; }
   .billing-detail-popup .modal-body { padding: 0; }
-  .billing-detail-popup .modal-content { height: 511px; top: 133px; }
+  .billing-detail-popup .modal-content { height: 741px; top: 133px; }
   .billing-detail-popup .modal-body h1 { padding: 21px 31px; }
   .billing-detail-popup .continuation-button .billing-content-1 .billing-next-button { max-width: 100%; border-radius: 0; position: fixed; bottom: 0; left: 0; margin: 0; }
   .billing-detail-popup .modal-body h1 { border-bottom: 0.6px solid #E6E5EB; }
@@ -129,7 +165,7 @@
   .billing-detail-popup .continuation-button .billing-content-2 .billing-close-button { display: block; }
   .billing-detail-popup .continuation-button { display: flex; flex-direction: row-reverse; position: fixed; bottom: 0; left: 0; width: 100%; }
   .billing-detail-popup .continuation-button .billing-next-button { width: 100%; margin: 0; border-radius: 0; max-width: 100%; }
-  .billing-detail-popup .continuation-button .billing-close-button { width: 100%; background: #FFF; box-shadow: 0px -3px 7px 0px rgba(0,0,0,0.05); color: #F86403; font-family: var(--primary-font); font-size: 18px; font-style: normal; font-weight: 700; line-height: 17px; }
+  .billing-detail-popup .continuation-button .billing-close-button { border: none; width: 100%; background: #FFF; box-shadow: 0px -3px 7px 0px rgba(0,0,0,0.05); color: #96999E; font-family: var(--primary-font); font-size: 18px; font-style: normal; font-weight: 700; line-height: 17px; }
   .recent-payment-tab { border-radius: 154px; border: 1px solid #24272C; width: 100%; background: #fff; display: flex; justify-content: center; align-items: center; column-gap: 11px; padding: 12px 0; max-height: 42px; margin-top: 40px; color: #25233C; text-align: center; font-family: var(--primary-font); font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; }
   .popup-container .modal-form button { width: 52px; height: 44px; display: flex; justify-content: center; align-items: end; }
   .popup-container .image-modal-size { width: 35px; height: 35px; }
@@ -151,15 +187,16 @@
   .popup-container .status-p p { color: #F09300; text-align: center; font-family: var(--primary-font); font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; letter-spacing: 0.14px; }
   .popup-container .status-s p { color: #28AE62; text-align: center; font-family: var(--primary-font); font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; letter-spacing: 0.14px; }
   .popup-container .table-body td:first-child { padding: 21px 0px 21px 56px; }
+  .recent-payment-container .offcanvas-backdrop { display: none; }
 }
 @media (min-width:320px) and (max-width:767px) {
-  .plan-box-content h6:last-child {padding-bottom: 50px;}
+  .plan-box-main:last-child { padding-bottom: 10px; }
   .billing-detail-popup .continuation-button .billing-next-button a { color: #fff; }
   .popup-container .table-body td:first-child { padding: 21px 0px 21px 56px; }
   .below-992 { display: block; }
   .above-992 { display: none; }
   .recent-tool-container { width: 50%; }
-  .navbar-container { height: 90px; padding: 0 10px; column-gap: 10px; }
+  .navbar-container { height: 100px; padding: 0 10px; column-gap: 10px; }
   .inner-section-two { margin: 0; background: transparent; border: none; }
   .inner-section-three { margin: 0 10px; top: 220px; }
   .form-container { padding: 10px; margin-bottom: 0px; }
@@ -196,13 +233,24 @@
   .details { display: none !important; }
   .popup-container .table-body td:first-child { padding: 21px 10px; }
   .price { padding-right: 10px; }
-  .navbar-container { max-width: 99%; border-radius: 20px 0 0 20px; }
+  .navbar-container { max-width: 100%; border-radius: 20px 0 0 20px; }
   .inner-section-two { height: 630px !important; }
   .billing-content-2 .bill-detail-container { padding: 17px 6px; }
   .offcanvas { height: 735px !important; }
   .offcanvas-op-h { height: 535px !important; }
   .offcanvas-am-h { height: 811px !important; }
   .operator-container { max-height: 483px; }
+  .recent-payment-container .offcanvas-backdrop { display: none; }
+}
+@media (min-width:1100px) and (max-width:1520px) {
+  .desktop-popup .table-body td:first-child { max-width: 290px; }
+}
+@media (min-width:1219px) and (max-width:1446px) {
+  .desktop-popup .table-body td { margin-top: 31px; }
+}
+@media (min-width:992px) and  (max-width:1100px) {
+  .price { width: 14%; }
+  .details { margin-right: 15px; }
 }
 /** For small screens */
 @media (max-width:992px) {
@@ -220,6 +268,9 @@
 @media (max-width:600px) {
   .popup-container .modal-form input { min-width: 450px; }
 }
+@media (max-width:563px) {
+  .daterangepicker .calendar-table td { height: 35px; }
+}
 @media(max-width:500px) {
   .popup-container .ui-datepicker { right: 0; height: 286px; }
   .popup-container .ui-datepicker-header { margin-top: 15px; }
@@ -231,8 +282,13 @@
 @media (max-width:400px) {
   .search-bar-container .modal-form input { margin-left: -240px; padding-left: 10px; }
   .search-bar-container .modal-form input { min-width: 330px; }
+  .offcanvas { height: 525px !important; }
+  .plan-box-main:last-child { padding-bottom: 10px; }
+  .pb-30 { padding-bottom: 55px; }
+  .billing-detail-popup .modal-body .payment-container table tbody tr td:last-child { padding: 0; }
 }
 @media (max-width:350px) {
   .plan-box-content { max-width: 166px; }
   .search-bar-container .modal-form input { min-width: 293px; }
+  .customer { display: none !important; }
 }
