@@ -6,7 +6,7 @@
 .service-sec-1 h5 { color: #000; font-family: var(--primary-font); font-size: 28px; font-style: normal; font-weight: 700; line-height: normal; margin-bottom: 64px; }
 .service-container { border: 1px solid rgba(150,153,158,0.30); background: #FFF; padding: 54px; margin: 0 70px 84px; }
 .services { display: flex; column-gap: 160px; flex-wrap: wrap; row-gap: 40px; }
-.link-to { text-decoration: none; }
+.link-to { text-decoration: none; min-width: 130px;}
 .link-to .icon { margin-bottom: 22px; }
 .link-to h6 { color: #24272C; font-family: var(--primary-font); font-size: 20px; font-style: normal; font-weight: 400; line-height: normal; letter-spacing: 0.2px; }
 .link-to h6 span { color: #24272C; font-family: var(--primary-font); font-size: 20px; font-style: normal; font-weight: 600; line-height: normal; letter-spacing: 0.2px; }
